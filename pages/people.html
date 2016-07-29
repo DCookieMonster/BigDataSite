@@ -1,0 +1,238 @@
+<style type="text/css">
+	p{
+		margin-bottom: 15px;
+	}
+	h3{
+		margin: 15px 0 15px;
+	}
+	p a{
+		    /*border-bottom: 1px dashed #ccc;*/
+	}
+	p a:hover{
+		color: #337ab7;
+		    /*text-decoration: underline;*/
+		        border-bottom: 1px dashed #ccc;
+	}
+	.btnghost{
+		margin-top: 0px;
+	}
+	.clear{
+		margin-top: 120px;
+	}
+	.rpeople{
+		margin-bottom: 50px;
+	}
+	h3 small{
+		text-transform: capitalize;
+	}
+</style>
+<div ng-controller="peopleCtrl" class="container content-section ">
+	<h1>people</h1>
+	<hr>
+	<div class="row">
+		<div class="col-lg-6">
+			<h3><a target="_blank" href="http://www.eecs.harvard.edu/~gal/"> Dr. Ya'akov (Kobi) Gal</a></h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-6">
+		<a target="_blank" href="http://www.eecs.harvard.edu/~gal/">	<img class="img-responsive" src="img/people/kobigal.jpg"></a>
+
+
+		</div>
+		<div class="col-lg-6">
+		
+<div btf-markdown="aboutKobi">
+</div>
+<!-- 
+			<p>
+				<a target="_blank" href="www.ise.bgu.ac.il"> Department of Information Systems Engineering</a><br>
+			<a target="_blank"  href="http://in.bgu.ac.il/engn/Pages/default.aspx">	Faculty of Engineering Sciences </a><br>
+			<a target="_blank"  href="http://in.bgu.ac.il/Pages/default.aspx">	Ben-Gurion University of the Negev</a>
+
+			</p>
+			<p>
+				kobig@bgu.ac.il
+			</p>
+			<p>
+				I lead the Human-Computer Decision-Making lab and a proud member of the Artificial Intelligence Group (AIRG) at BGU.<br> 
+				I am also affiliated with the <a href="http://www.deas.harvard.edu/"> School of Engineering and Applied Sciences </a> at <a href="http://www.harvard.edu/"> Harvard University</a>
+			</p> -->
+			<br>
+			<br>
+<ul class="list-inline banner-social-buttons">
+				<li>
+			<a href="http://scholar.google.co.il/citations?hl=en&user=lNHuLiQAAAAJ&view_op=list_works" class="btn btnghost btn-lg" target="_blank"><i
+						class="fa fa-2x fa-google"></i> Scholar</a>
+				</li>
+				<li>
+
+
+					<a href="http://www.informatik.uni-trier.de/~ley/pers/hd/g/Gal:Ya=akov.html" class="btn btnghost btn-lg" target="_blank"><i
+						class="fa fa-2x fa-graduation-cap"></i> dblp</a>				</li>
+				
+			</ul>
+
+
+			
+
+
+		</div>
+	</div>
+				
+	<br>
+	<br>
+	<hr>
+	<br>
+	<br>
+		<div ng-if="data.graduateStudents.length" class="row">
+							<h2>Graduate students</h2>
+							<hr>
+					</div>
+	<div class="row rpeople" ng-repeat="peoples in people.graduateStudents | orderBy:'firstName' | orderBy : '-rank'| chunkBy:4">
+
+		<div class="col-md-3 text-center person"
+		ng-repeat="p in peoples | orderBy:'firstName' | orderBy : '-rank'">
+		<!--<div class="thumbnail">-->
+		<img class="img-responsive" ng-src="{{p.img}}" alt="{{p.firstName}}" title="{{p.firstName}}">
+
+		<div class="caption">
+			<h3>
+				<!--Website Exists-->
+				<a ng-if="p.website" href="{{p.website}}">{{p.firstName + " " + p.lastName}}<br></a>
+				<!--No Website-->
+				<span ng-if="!p.website">{{p.firstName + " " + p.lastName}}<br></span>
+				<small>{{p.rank}}</small>
+			</h3>
+			<p class="about">{{p.about}}</p>
+			<ul class="list-inline">
+				<!--linkedin-->
+				<li ng-if="p.linkedin"><a href="{{p.linkedin}}" target="_blank"><i
+					class="fa fa-2x fa-linkedin-square"></i></a></li>
+					<!--scholar-->
+					<li ng-if="p.scholar"><a href="{{p.scholar}}" target="_blank"><i
+						class="fa fa-2x fa-graduation-cap"></i></a></li>
+						<!--github-->
+						<li ng-if="p.github"><a href="{{p.github}}" target="_blank"><i
+							class="fa fa-2x fa-github-square"></i></a></li>
+							<!--twitter-->
+							<li ng-if="p.twitter"><a href="{{p.twitter}}" target="_blank"><i
+								class="fa fa-2x fa-twitter-square"></i></a></li>
+								<!--facebook-->
+								<li ng-if="p.facebook"><a href="{{p.facebook}}" target="_blank"><i
+									class="fa fa-2x fa-facebook-square"></i></a></li>
+								</ul>
+							</div>
+							<!--</div>-->
+						</div>
+					</div>
+
+						<div class="clear"></div>
+					<div ng-if="data.undergraduateStudents.length" class="row">
+							<h2>Undergraduate students</h2>
+							<hr>
+					</div>
+						<div class="row" ng-repeat="peoples in people.undergraduateStudents | orderBy:'firstName' | orderBy : '-rank'| chunkBy:4">
+
+		<div class="col-md-3 text-center person"
+		ng-repeat="p in peoples | orderBy:'firstName' | orderBy : '-rank'">
+		<!--<div class="thumbnail">-->
+		<a ng-if="p.website" href="{{p.website}}">
+		<img class="img-responsive" ng-src="{{p.img}}" alt="{{p.firstName}}" title="{{p.firstName}}">
+</a>
+		<img ng-if="!p.website" class="img-responsive" ng-src="{{p.img}}" alt="{{p.firstName}}" title="{{p.firstName}}">
+
+		<div class="caption">
+			<h3>
+				<!--Website Exists-->
+				<a ng-if="p.website" href="{{p.website}}">{{p.firstName + " " + p.lastName}}<br></a>
+				<!--No Website-->
+				<span ng-if="!p.website">{{p.firstName + " " + p.lastName}}<br></span>
+				<small>{{p.rank}}</small>
+			</h3>
+			<p class="about">{{p.about}}</p>
+			<ul class="list-inline">
+				<!--linkedin-->
+				<li ng-if="p.linkedin"><a href="{{p.linkedin}}" target="_blank"><i
+					class="fa fa-2x fa-linkedin-square"></i></a></li>
+					<!--scholar-->
+					<li ng-if="p.scholar"><a href="{{p.scholar}}" target="_blank"><i
+						class="fa fa-2x fa-graduation-cap"></i></a></li>
+						<!--github-->
+						<li ng-if="p.github"><a href="{{p.github}}" target="_blank"><i
+							class="fa fa-2x fa-github-square"></i></a></li>
+							<!--twitter-->
+							<li ng-if="p.twitter"><a href="{{p.twitter}}" target="_blank"><i
+								class="fa fa-2x fa-twitter-square"></i></a></li>
+								<!--facebook-->
+								<li ng-if="p.facebook"><a href="{{p.facebook}}" target="_blank"><i
+									class="fa fa-2x fa-facebook-square"></i></a></li>
+									<!--gmail-->
+								<li ng-if="p.gmail"><a href="mailto:{{p.gmail}}" target="_blank"><i
+									class="fa fa-2x fa-google-plus-square "></i></a></li>
+
+											<!--Thesis-->
+								<li ng-if="p.thesis"><a title="Thesis"  href="{{p.thesis}}" target="_blank"><i
+									class="fa fa-2x fa-file-text "></i></a></li>
+								</ul>
+							</div>
+							<!--</div>-->
+						</div>
+					</div>
+
+
+					<div class="clear"></div>
+					<div ng-if="data.alumni.length" class="row">
+							<h2>Alumni</h2>
+							<hr>
+					</div>
+						<div class="row" ng-repeat="peoples in people.alumni | orderBy:'firstName' | orderBy : '-rank'| chunkBy:4">
+
+		<div class="col-md-3 text-center person"
+		ng-repeat="p in peoples | orderBy:'firstName' | orderBy : '-rank'">
+		<!--<div class="thumbnail">-->
+		<a ng-if="p.website" href="{{p.website}}">
+		<img class="img-responsive" ng-src="{{p.img}}" alt="{{p.firstName}}" title="{{p.firstName}}">
+</a>
+		<img ng-if="!p.website" class="img-responsive" ng-src="{{p.img}}" alt="{{p.firstName}}" title="{{p.firstName}}">
+
+		<div class="caption">
+			<h3>
+				<!--Website Exists-->
+				<a ng-if="p.website" href="{{p.website}}">{{p.firstName + " " + p.lastName}}<br></a>
+				<!--No Website-->
+				<span ng-if="!p.website">{{p.firstName + " " + p.lastName}}<br></span>
+				<small>{{p.rank}}</small>
+			</h3>
+
+			<p class="about">{{p.about}}</p>
+	
+			<ul class="list-inline">
+				<!--linkedin-->
+				<li ng-if="p.linkedin"><a href="{{p.linkedin}}" target="_blank"><i
+					class="fa fa-2x fa-linkedin-square"></i></a></li>
+					<!--scholar-->
+					<li ng-if="p.scholar"><a href="{{p.scholar}}" target="_blank"><i
+						class="fa fa-2x fa-graduation-cap"></i></a></li>
+						<!--github-->
+						<li ng-if="p.github"><a href="{{p.github}}" target="_blank"><i
+							class="fa fa-2x fa-github-square"></i></a></li>
+							<!--twitter-->
+							<li ng-if="p.twitter"><a href="{{p.twitter}}" target="_blank"><i
+								class="fa fa-2x fa-twitter-square"></i></a></li>
+								<!--facebook-->
+								<li ng-if="p.facebook"><a href="{{p.facebook}}" target="_blank"><i
+									class="fa fa-2x fa-facebook-square"></i></a></li>
+									<!--gmail-->
+								<li ng-if="p.gmail"><a href="mailto:{{p.gmail}}" target="_blank"><i
+									class="fa fa-2x fa-google-plus-square "></i></a></li>
+
+											<!--Thesis-->
+								<li ng-if="p.thesis"><a title="Thesis"  href="{{p.thesis}}" target="_blank"><i
+									class="fa fa-2x fa-file-text "></i></a></li>
+								</ul>
+							</div>
+							<!--</div>-->
+						</div>
+					</div>
+				</div>
