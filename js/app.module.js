@@ -3,7 +3,7 @@
  */
 
 
-var Mainapp=angular.module('mainApp', [ 'ngAnimate', 'ui.bootstrap']);
+var Mainapp=angular.module('mainApp', [ 'ngAnimate', 'ui.bootstrap','ngSanitize']);
 
 var PagesApp=angular.module('PagesApp', ['ngRoute','angular.filter', 'ngAnimate', 'ui.bootstrap','ngSanitize',
     'btford.markdown']);
@@ -15,19 +15,27 @@ PagesApp.config(['$routeProvider', '$locationProvider',
             templateUrl: 'pages/people.html',
             controller: 'peopleCtrl'
         }).
-        when('/uprojects', {
-            templateUrl: 'uprojects.html',
-            controller: 'projectCtrl'
+        when('/teaching', {
+            templateUrl: 'pages/teaching.html',
+            controller: 'teachingCtrl'
         }).
-        when('/pic', {
-            templateUrl: 'pic.html',
-            controller: 'picCtrl'
-        }).when('/dor', {
-            templateUrl: 'dor.html',
-            controller: 'dorCtrl'
+        when('/publications', {
+            templateUrl: 'pages/publications.html',
+            controller: 'publicationsCtrl'
+        }).when('/media', {
+            templateUrl: 'pages/media.html',
+            controller: 'mediaCtrl'
+        }).
+            when('/dmbi', {
+                templateUrl: 'pages/dmbi.html',
+                controller: 'dmbiCtrl'
+            }).
+        when('/projects', {
+            templateUrl: 'pages/projects.html',
+            controller: 'projectsCtrl'
         }).
         when('/contact', {
-            templateUrl: 'contact.html',
+            templateUrl: 'pages/contact.html',
             controller: 'contactCtrl'
         }).
         otherwise({
