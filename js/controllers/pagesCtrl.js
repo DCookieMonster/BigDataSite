@@ -99,3 +99,16 @@ PagesApp.controller("contactCtrl",  function($scope, $http) {
 
     // });
 });
+
+PagesApp.controller("searchCtrl",  function($scope, $http) {
+     $http.get("data/people.json")
+     .then(function(response) {
+         $scope.people = response.data;
+
+     });
+
+    $http.get("data/mainPage.json")
+        .then(function(response) {
+            $scope.mainPage = response.data;
+        });
+});

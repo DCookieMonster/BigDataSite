@@ -38,6 +38,11 @@ PagesApp.config(['$routeProvider', '$locationProvider',
             templateUrl: 'pages/contact.html',
             controller: 'contactCtrl'
         }).
+
+        when('/search', {
+            templateUrl: 'pages/search.html',
+            controller: 'searchCtrl'
+        }).
         otherwise({
             redirectTo: '/'
         });
