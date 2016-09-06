@@ -22,7 +22,7 @@
     }
 
     .clear {
-        margin-top: 120px;
+        margin-top: 60px;
     }
 
     .rpeople {
@@ -77,7 +77,7 @@
     }
 
 </style>
-<div ng-controller="dmbiCtrl" class="container content-section ">
+<div ng-controller="searchCtrl" class="container content-section ">
     <h1>Search</h1>
     <hr>
 
@@ -85,9 +85,9 @@
         <div class="row">
             <div id="custom-search-input">
                 <div class="input-group col-md-12">
-                    <input type="text" class="  search-query form-control input-lg" placeholder="What are you looking for..." />
+                    <input type="text" ng-model="search_query" ng-change="search(search_query)" class="  search-query form-control input-lg" placeholder="What are you looking for..." />
                                 <span class="input-group-btn">
-                                    <button class="btn btn-danger" type="button">
+                                    <button ng-click="search(search_query)" class="btn btn-danger" type="button">
                                         <span class=" glyphicon glyphicon-search"></span>
                                     </button>
                                 </span>
@@ -95,12 +95,80 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-lg-12">
             <h3>
                 coming soon...
             </h3>
         </div>
+    </div> -->
+    <div class="container">
+
+    <div class="clear"></div>
+    <div ng-show="search_pages.length" class="row">
+        <h2>Pages</h2>
+        <hr>
+        <div class="row "
+             ng-repeat="page in search_pages|  orderBy : ['page_name']">
+          <a href="pages.html#/{{page.path}}"   <div class="col-lg-12">
+               <h3>{{page.page_name}}</h3>
+               <p>{{page.description}}<p>
+             </div>
+           </a>
+</div>
     </div>
+
+    <div class="clear"></div>
+    <div ng-show="search_people.length" class="row">
+        <h2>students</h2>
+        <hr>
+    </div>
+    <div class="row rpeople"
+         ng-repeat="peoples in search_people|  orderBy : ['-rank','status','firstName','lastName']| chunkBy:3">
+
+        <div class="col-md-4 text-center person"
+             ng-repeat="p in peoples | orderBy:'firstName' | orderBy : '-status'">
+            <!--<div class="thumbnail">-->
+            <!--<img class="img-responsive" ng-src="{{p.img}}" alt="{{p.firstName}}" title="{{p.firstName}}">-->
+
+            <div class="caption">
+                <h3>
+                    <!--Website Exists-->
+                    <a ng-if="p.website" href="{{p.website}}">{{p.firstName + " " + p.lastName}}<br></a>
+                    <!--No Website-->
+                    <span ng-if="!p.website">{{p.firstName + " " + p.lastName}}<br></span>
+                    <small>{{p.rank}}</small>
+                </h3>
+                <!--<p class="about">{{p.about}}</p>-->
+                <p class="about"><strong>Title: </strong>{{p.title}}<br>
+                    <strong>Status: </strong>{{p.status}}</p>
+
+                <ul class="list-inline">
+                    <!--linkedin-->
+                    <li ng-if="p.linkedin"><a href="{{p.linkedin}}" target="_blank"><i
+                            class="fa fa-2x fa-linkedin-square"></i></a></li>
+                    <!--scholar-->
+                    <li ng-if="p.scholar"><a href="{{p.scholar}}" target="_blank"><i
+                            class="fa fa-2x fa-graduation-cap"></i></a></li>
+                    <!--github-->
+                    <li ng-if="p.github"><a href="{{p.github}}" target="_blank"><i
+                            class="fa fa-2x fa-github-square"></i></a></li>
+                    <!--twitter-->
+                    <li ng-if="p.twitter"><a href="{{p.twitter}}" target="_blank"><i
+                            class="fa fa-2x fa-twitter-square"></i></a></li>
+                    <!--facebook-->
+                    <li ng-if="p.facebook"><a href="{{p.facebook}}" target="_blank"><i
+                            class="fa fa-2x fa-facebook-square"></i></a></li>
+                    <!--gmail-->
+                    <li ng-if="p.gmail"><a href="mailto:{{p.gmail}}" target="_blank"><i
+                            class="fa fa-2x fa-google-plus-square "></i></a></li>
+
+                </ul>
+            </div>
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+    <div class="clear"></div>
     <div style="height: 400px"></div>
 </div>

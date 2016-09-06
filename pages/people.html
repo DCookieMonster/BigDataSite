@@ -302,12 +302,12 @@
     <hr>
 </div>
 <div class="row rpeople"
-     ng-repeat="peoples in people.graduateStudents | orderBy:'firstName' | orderBy : '-rank'| chunkBy:4">
+     ng-repeat="peoples in people.graduateStudents |  orderBy : ['-rank','status','firstName','lastName']| chunkBy:3">
 
-    <div class="col-md-3 text-center person"
-         ng-repeat="p in peoples | orderBy:'firstName' | orderBy : '-rank'">
+    <div class="col-md-4 text-center person"
+         ng-repeat="p in peoples | orderBy:'firstName' | orderBy : '-status'">
         <!--<div class="thumbnail">-->
-        <img class="img-responsive" ng-src="{{p.img}}" alt="{{p.firstName}}" title="{{p.firstName}}">
+        <!--<img class="img-responsive" ng-src="{{p.img}}" alt="{{p.firstName}}" title="{{p.firstName}}">-->
 
         <div class="caption">
             <h3>
@@ -317,7 +317,9 @@
                 <span ng-if="!p.website">{{p.firstName + " " + p.lastName}}<br></span>
                 <small>{{p.rank}}</small>
             </h3>
-            <p class="about">{{p.about}}</p>
+            <!--<p class="about">{{p.about}}</p>-->
+            <p class="about"><strong>Title: </strong>{{p.title}}<br>
+                <strong>Status: </strong>{{p.status}}</p>
 
             <ul class="list-inline">
                 <!--linkedin-->

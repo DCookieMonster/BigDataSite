@@ -1,0 +1,59 @@
+{
+  "graduateStudents": [
+    {
+      "firstName": "Yisroel",
+      "lastName": "Mirsky",
+      "gmail":"yisroel@post.bgu.ac.il",
+      "img": "img/profile/yisroel.png",
+      "rank": "PhD Student",
+      "about": "My research lies at the intersection of Smartphone and IoT Security, Time-series Anomaly Detection, Context-based Security, Air-gap Security, and Physical Signal Encryption.",
+      "website":"http://ymirsky1.wix.com/"
+
+    },
+    {
+      "firstName": "Edita",
+      "lastName": "Grolman",
+      "gmail":"edita.gro@gmail.com",
+      "img": "img/profile/edita.jpg",
+      "about": "My research lies at the intersection of analysis of Machine Learning and algorithms and their applications in Recommender Systems and Information Retrieval.",
+      "rank": "PhD Student",
+      "website": "http://www.ise.bgu.ac.il/engineering/PersonalWebSite1main.aspx?id=VuVsjrssj"
+    },
+    
+    {
+      "firstName": "Victor",
+      "lastName": "Makarenkov",
+      "gmail":"makarenk@post.bgu.ac.il",
+      "img": "img/profile/victor.png",
+      "about": "My research lies at the intersection of machine learning and information retrieval. His current research focuses on exploiting Recurrent Neural Networks (RNNs) for building constrained language models.",
+      "rank": "PhD Student",
+      "scholar": "https://scholar.google.co.il/citations?user=JoQW6b8AAAAJ&hl=en"
+    }
+  
+  ],
+
+  "undergraduateStudents":[
+
+
+        {
+      "firstName": "ISRAEL",
+      "lastName": "ISRAEL",
+      "img": "img/profile/avatar.jpg",
+      "about": "Software Engineering Student, currently working on the Incentive Server",
+      "rank": "BSc Student"  
+    }
+  ],
+  "alumni":[
+{
+  "firstName": "ISRAEL",
+  "lastName": "ISRAEL",
+  "img": "img/profile/avatar.jpg",
+  "about": "Software Engineering Student, currently working on the Incentive Server",
+      "rank": "PhD candidate at Harvard University",
+      "website":"http://scholar.harvard.edu/oamir/",
+      "scholar": "https://scholar.google.com/citations?user=WS5b_koAAAAJ&hl=en",
+      "thesis":"https://www.dropbox.com/s/l2pn1lcmf2qnbn8/thesisFinal.pdf"
+    }
+
+  ]
+}

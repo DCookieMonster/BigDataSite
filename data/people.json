@@ -3,13 +3,40 @@
     {
       "firstName": "Yisroel",
       "lastName": "Mirsky",
+      "school": "Ben-Gurion University, Information Systems Engineering",
+      "title": "Context aware Analysis for Smartphone Security",
+      "status": "Proposal in progress",
       "gmail":"yisroel@post.bgu.ac.il",
       "img": "img/profile/yisroel.png",
       "rank": "PhD Student",
       "about": "My research lies at the intersection of Smartphone and IoT Security, Time-series Anomaly Detection, Context-based Security, Air-gap Security, and Physical Signal Encryption.",
-      "website":"http://ymirsky1.wix.com/"
+      "website":"http://ymirsky1.wix.com/",
+      "linkedin": "https://www.linkedin.com/in/yisroel-mirsky-4189683b?authType=NAME_SEARCH&authToken=_cO7&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A142719572%2CauthType%3ANAME_SEARCH%2Cidx%3A1-4-4%2CtarId%3A1471160566016%2Ctas%3AMirsky"
 
     },
+    {
+      "firstName": "Ido",
+      "lastName": "Guy",
+      "school": "Ben-Gurion University, Information Systems Engineering",
+      "title": "Mobile search",
+      "status": "Proposal in preparation",
+      "linkedin":"https://www.linkedin.com/in/ido-guy-8b61621?authType=OUT_OF_NETWORK&authToken=W2NH&trk=prof-connections-name",
+      "rank": "PhD Student"
+
+    },
+    {
+      "firstName": "Moshe",
+      "lastName": "Unger",
+      "school": "Ben-Gurion University, Information Systems Engineering",
+      "title": "Latent Context aware recommender systems",
+      "status": "Proposal approved",
+      "linkedin":"https://www.linkedin.com/in/moshe-unger-426558aa?authType=NAME_SEARCH&authToken=qUNw&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A389540190%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1471160548289%2Ctas%3AMOSHE",
+      "rank": "PhD Student"
+
+    },
+
+
+
     {
       "firstName": "Edita",
       "lastName": "Grolman",
@@ -17,43 +44,174 @@
       "img": "img/profile/edita.jpg",
       "about": "My research lies at the intersection of analysis of Machine Learning and algorithms and their applications in Recommender Systems and Information Retrieval.",
       "rank": "PhD Student",
+      "status": "Proposal submitted",
+      "title": "Transfer Learning for Sentiment Analysis",
       "website": "http://www.ise.bgu.ac.il/engineering/PersonalWebSite1main.aspx?id=VuVsjrssj"
     },
-    
+
+    {
+      "firstName": "Hagit",
+      "lastName": "Grushka",
+      "gmail":"",
+      "img": "",
+      "about": "",
+      "rank": "PhD Student",
+      "status": "N/A",
+      "title": "Risk Factoring",
+      "linkedin": "https://www.linkedin.com/in/hagit-grushka-2695a712?authType=NAME_SEARCH&authToken=Tm4N&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A43267761%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1471160790401%2Ctas%3AHagit%20Gr"
+    },
+    {
+      "firstName": "Michael",
+      "lastName": "Dimschitz",
+      "gmail":"",
+      "img": "",
+      "about": "",
+      "rank": "PhD Student",
+      "status": "Proposal in preparation",
+      "title": "Deep Learning for Anomaly Detection",
+      "linkedin": "https://www.linkedin.com/in/dymshitsmichael?authType=NAME_SEARCH&authToken=7BLn&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A165975300%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1471160624503%2Ctas%3AMICHAEL%20D"
+    },
+    {
+      "firstName": "Efrat",
+      "lastName": "Chalfon",
+      "gmail":"",
+      "img": "",
+      "about": "",
+      "rank": "PhD Student",
+      "status": "Proposal in preparation",
+      "title": "Attack Graph Optimizations"
+    },
+    {
+      "firstName": "Ariel",
+      "lastName": "Bar",
+      "gmail":"",
+      "img": "",
+      "about": "",
+      "rank": "PhD Student",
+      "status": "N/A",
+      "title": "Machine learning for Cyber Security"
+    },
+    {
+      "firstName": "Miriam",
+      "lastName": "Chodoker",
+      "gmail":"",
+      "img": "",
+      "about": "",
+      "rank": "MSc Student",
+      "status": "proposal in preparation",
+      "title": "Boosting Information Retrieval with Wikipedia"
+    },
+    {
+      "firstName": "Moran",
+      "lastName": "Hacham",
+      "gmail":"",
+      "img": "",
+      "about": "",
+      "rank": "MSc Student",
+      "status": "proposal submitted",
+      "title": "Global Utility for CF Recommender Systems",
+      "linkedin": "https://www.linkedin.com/in/moran-haham-0b7b44b?authType=OUT_OF_NETWORK&authToken=KL4R&trk=prof-connections-name"
+    },
+    {
+      "firstName": "Eran",
+      "lastName": "Feinman",
+      "gmail":"",
+      "img": "",
+      "about": "",
+      "rank": "MSc Student",
+      "title": "Intelligent Smartphone Sensing",
+      "status": "Proposal in preparation"
+    },
+    {
+      "firstName": "Saar",
+      "lastName": "Tal",
+      "linkedin":"https://www.linkedin.com/in/saar-tal-322b6183?authType=NAME_SEARCH&authToken=k2al&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A298476170%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1471160955481%2Ctas%3ASAAR",
+      "img": "",
+      "about": "",
+      "rank": "MSc Student",
+      "title": "Intelligent sensing using active learning",
+      "status": "Proposal in preparation"
+    },
+    {
+      "firstName": "Noa",
+      "lastName": "Roy",
+      "linkedin":"https://www.linkedin.com/in/noa-roy-9777a543?authType=NAME_SEARCH&authToken=GNml&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A154244395%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1471160969760%2Ctas%3ANoa%20",
+      "img": "",
+      "about": "",
+      "rank": "MSc Student",
+      "title": "Modeling Graph Databases",
+      "status": "Proposal in preparation"
+    },
+      {
+      "firstName": "Shahar",
+      "lastName": "Admati",
+      "linkedin" : "https://www.linkedin.com/in/shahar-admati-796417ba?authType=NAME_SEARCH&authToken=XDUK&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A425039010%2CauthType%3ANAME_SEARCH%2Cidx%3A3-1-6%2CtarId%3A1471160983676%2Ctas%3AAdma",
+      "img": "",
+      "about": "",
+      "rank": "MSc Student",
+      "title": "Automatic Wikipedia book generation",
+      "status": "Proposal in preparation"
+    },
+       {
+      "firstName": "Niva",
+      "lastName": "Hazon",
+      "linkedin": "https://www.linkedin.com/in/niva-hazon-a00519121?authType=NAME_SEARCH&authToken=8imx&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A505913184%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1471160998248%2Ctas%3ANiva%20H",
+      "img": "",
+      "about": "",
+      "rank": "MSc Student",
+      "title": "Bot segmentation using machine learning",
+      "status": "Proposal in preparation"
+    },
+          {
+      "firstName": "Hadar",
+      "lastName": "Polad",
+      "linkedin":  "https://www.linkedin.com/in/hadar-polad-874691a7?authType=NAME_SEARCH&authToken=fYWN&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A380902552%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1471161012414%2Ctas%3AHadar%20Pol",
+      "img": "",
+      "about": "",
+      "rank": "MSc Student",
+      "title": "Graph Obfuscation",
+      "status": "Proposal in preparation"
+    },
+      {
+      "firstName": "Ruben",
+      "lastName": "Ohayon",
+      "linkedin":"https://www.linkedin.com/in/ruben-ohayon-14804a3a?authType=NAME_SEARCH&authToken=iA6k&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A137455688%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1471161029151%2Ctas%3ARuben%20O",
+      "img": "",
+      "about": "",
+      "rank": "MSc Student",
+      "title": "redictive analytics for personalized TV shows",
+      "status": "Proposal in preparation"
+    },
+         {
+      "firstName": "Yael",
+      "lastName": "Brumer",
+      "linkedin": "https://www.linkedin.com/in/yael-brumer-0b59353a?authType=NAME_SEARCH&authToken=118B&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A139665737%2CauthType%3ANAME_SEARCH%2Cidx%3A1-2-2%2CtarId%3A1471161042603%2Ctas%3AYael%20Br",
+      "img": "",
+      "about": "",
+      "rank": "MSc Student",
+      "title": "Deep learning for next click prediction",
+      "status": "Proposal in preparation"
+    },
     {
       "firstName": "Victor",
       "lastName": "Makarenkov",
       "gmail":"makarenk@post.bgu.ac.il",
+      "title": "Query Prediction for Sentences Correction",
+      "status": "Proposal submitted",
       "img": "img/profile/victor.png",
       "about": "My research lies at the intersection of machine learning and information retrieval. His current research focuses on exploiting Recurrent Neural Networks (RNNs) for building constrained language models.",
       "rank": "PhD Student",
-      "scholar": "https://scholar.google.co.il/citations?user=JoQW6b8AAAAJ&hl=en"
+      "scholar": "https://scholar.google.co.il/citations?user=JoQW6b8AAAAJ&hl=en",
+      "linkedin": "https://www.linkedin.com/in/victor-makarenkov-5776144?authType=NAME_SEARCH&authToken=QUpQ&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A13465387%2CauthType%3ANAME_SEARCH%2Cidx%3A1-3-3%2CtarId%3A1471160583177%2Ctas%3AVictor%20M"
     }
   
   ],
 
   "undergraduateStudents":[
 
-
-        {
-      "firstName": "ISRAEL",
-      "lastName": "ISRAEL",
-      "img": "img/profile/avatar.jpg",
-      "about": "Software Engineering Student, currently working on the Incentive Server",
-      "rank": "BSc Student"  
-    }
   ],
   "alumni":[
-{
-  "firstName": "ISRAEL",
-  "lastName": "ISRAEL",
-  "img": "img/profile/avatar.jpg",
-  "about": "Software Engineering Student, currently working on the Incentive Server",
-      "rank": "PhD candidate at Harvard University",
-      "website":"http://scholar.harvard.edu/oamir/",
-      "scholar": "https://scholar.google.com/citations?user=WS5b_koAAAAJ&hl=en",
-      "thesis":"https://www.dropbox.com/s/l2pn1lcmf2qnbn8/thesisFinal.pdf"
-    }
+
 
   ]
 }
