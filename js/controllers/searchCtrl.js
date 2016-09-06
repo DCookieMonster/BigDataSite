@@ -1,4 +1,5 @@
 PagesApp.controller("searchCtrl",  function($scope, $http) {
+  window.scrollTo(0, 0);
      $http.get("data/people.json")
      .then(function(response) {
          $scope.people = response.data;

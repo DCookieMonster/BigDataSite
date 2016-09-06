@@ -5,7 +5,7 @@
 
 PagesApp.controller("peopleCtrl",  function($scope, $http) {
 
-
+    window.scrollTo(0, 0);
 
     $http.get("data/people.json")
         .then(function(response) {
@@ -29,7 +29,7 @@ PagesApp.controller("peopleCtrl",  function($scope, $http) {
 
 });
 PagesApp.controller("teachingCtrl",  function($scope, $http) {
-
+    window.scrollTo(0, 0);
 
     //
     //$http.get("data/people.json")
@@ -56,6 +56,7 @@ PagesApp.controller("teachingCtrl",  function($scope, $http) {
 
 
 PagesApp.controller("projectCtrl",  function($scope, $http) {
+  window.scrollTo(0, 0);
     $http.get("data/projects.json")
         .then(function(response) {
             $scope.data = response.data;
@@ -64,6 +65,7 @@ PagesApp.controller("projectCtrl",  function($scope, $http) {
 });
 
 PagesApp.controller("kobiCtrl",  function($scope, $http) {
+  window.scrollTo(0, 0);
     $http.get("https://cdn.contentful.com/spaces/oms6o6p0a1c2/entries?access_token=f4a10de7d79820fd2c5559abb51c928a89e3df67b7ea0955dbb59ff22c9586d9&content_type=kobi")
         .then(function(response) {
             console.log(response.data);
@@ -74,6 +76,7 @@ PagesApp.controller("kobiCtrl",  function($scope, $http) {
 });
 
 PagesApp.controller("dorCtrl", function ($scope, $http) {
+  window.scrollTo(0, 0);
     // $http.get("https://cdn.contentful.com/spaces/oms6o6p0a1c2/entries?access_token=f4a10de7d79820fd2c5559abb51c928a89e3df67b7ea0955dbb59ff22c9586d9&content_type=kobi")
     //   .then(function(response) {
     //       console.log(response.data);
@@ -84,6 +87,7 @@ PagesApp.controller("dorCtrl", function ($scope, $http) {
 });
 
 PagesApp.controller("picCtrl",  function($scope, $http) {
+  window.scrollTo(0, 0);
     // $http.get("data/projects.json")
     // .then(function(response) {
     //     $scope.data = response.data;
@@ -93,11 +97,10 @@ PagesApp.controller("picCtrl",  function($scope, $http) {
 
 
 PagesApp.controller("contactCtrl",  function($scope, $http) {
+  window.scrollTo(0, 0);
     // $http.get("data/projects.json")
     // .then(function(response) {
     //     $scope.data = response.data;
 
     // });
 });
-
-
