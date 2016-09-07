@@ -1,9 +1,20 @@
 [
 {
-	"name" : "",
+	"name" : "Beehive - Machine Learning Analytics for honeypot data",
 	"people_on_the_project" : "",
-	"supervisors" : "",
-	"completion_date" : ""
+	"supervisors" : "Bracha Shapira and Lior Rokach",
+	"completion_date" : "December 2016"
+},
+{
+	"name" : "Context aware anomaly detection",
+	"people_on_the_project" : "",
+	"supervisors" : "Bracha Shapira and Lior Rokach with Assaf Shabtai, Yuval Elovici, Assaf Schuster (Technion)",
+	"completion_date" : "December 2016"
+},
+{
+	"name" : "XDR - Data Fabrication",
+	"people_on_the_project" : "",
+	"supervisors" : "Bracha Shapira",
+	"completion_date" : "March 2018"
 }
-
 ]
