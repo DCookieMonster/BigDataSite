@@ -12,6 +12,12 @@ PagesApp.controller("searchCtrl",  function($scope, $http) {
             $scope.pages = response.data;
         });
 
+        $http.get("data/projects.json")
+            .then(function(response) {
+              console.log(response)
+                $scope.projects = response.data;
+            });
+
     $scope.search_in_people = function(person,value){
     	if (person.firstName.toLowerCase().indexOf(value) > -1 ||
     		person.lastName.toLowerCase().indexOf(value) > -1 ||
@@ -20,6 +26,16 @@ PagesApp.controller("searchCtrl",  function($scope, $http) {
     		return true;
     	}
     	return false;
+    };
+
+    $scope.search_in_projects = function(project,value){
+      if (project.name.toLowerCase().indexOf(value) > -1 ||
+        project.supervisors.toLowerCase().indexOf(value) > -1 ||
+        project.people_on_the_project.toLowerCase().indexOf(value) > -1 )
+      {
+        return true;
+      }
+      return false;
     };
 
     $scope.search_in_pages = function(page,value){
@@ -31,14 +47,19 @@ PagesApp.controller("searchCtrl",  function($scope, $http) {
       }
       return false;
     };
+
+    //strip HTML tag and return regular text
     $scope.strip = function(html)
     {
        var tmp = document.createElement("DIV");
        tmp.innerHTML = html;
        return tmp.textContent||tmp.innerText;
     }
+
+
     $scope.search = function(input){
         $scope.search_pages = [];
+        $scope.search_projects = [];
     		$scope.search_people = [];
         if (input.size == 0 || input == ""){
           return;
@@ -48,7 +69,11 @@ PagesApp.controller("searchCtrl",  function($scope, $http) {
                     $scope.search_people.push(person)
                 }
             });
-      console.log($scope.search_people)
+            angular.forEach($scope.projects,  function(project, index){
+                    if ($scope.search_in_projects(project,input.toLowerCase())) {
+                        $scope.search_projects.push(project)
+                    }
+                });
           angular.forEach($scope.pages,  function(page, index){
                     if ($scope.search_in_pages(page,input.toLowerCase())) {
                       page.description = $scope.strip(page.text).substring(0,500)+"..."

@@ -104,7 +104,7 @@
     </div> -->
     <div class="container">
 
-    <div class="clear"></div>
+    <div ng-show="search_pages.length" class="clear"></div>
     <div ng-show="search_pages.length" class="row">
         <h2>Pages</h2>
         <hr>
@@ -117,8 +117,27 @@
            </a>
 </div>
     </div>
+<div ng-show="search_projects.length" class="clear"></div>
+<div ng-show="search_projects.length" class="row">
+<h1>Projects</h1>
+<hr>
 
-    <div class="clear"></div>
+<div ng-repeat="project in search_projects |  orderBy : ['-completion_date']">
+    <div class="row col-lg-12">
+        <h3>{{project.name}}</h3>
+    </div>
+    <div ng-if="project.people_on_the_project" class="row col-lg-12">
+      <p>{{project.people_on_the_project}}<p>
+    </div>
+    <div ng-if="project.supervisors" class="row col-lg-12">
+      <p>Supervisors: <i>{{project.supervisors}}</i><p>
+    </div>
+    <div ng-if="project.completion_date" class="row col-lg-12">
+      <p>Completion Date: <i>{{project.completion_date}}</i><p>
+    </div>
+</div>
+</div>
+    <div ng-show="search_people.length" class="clear"></div>
     <div ng-show="search_people.length" class="row">
         <h2>students</h2>
         <hr>
