@@ -7,7 +7,6 @@ Mainapp.controller('mainCtrl', ['$scope','$http', function($scope,$http) {
     window.scrollTo(0, 0);
     $http.get("data/mainPage.json")
         .then(function(response) {
-            console.log(response.data);
             $scope.aboutUs = response.data.aboutUs;
 
         });

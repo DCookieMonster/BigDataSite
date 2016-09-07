@@ -36,24 +36,6 @@
         font-size: 20px;
     }
 </style>
-<div ng-controller="dmbiCtrl" class="container content-section ">
-    <h1>DMBI</h1>
-    <hr>
-
-    <p>
-        The Annual DM for BI conference, organized by the Department of Software and Information Systems Engineering ​at
-        Ben-Gurion University of the Negev, aims at bringing together researchers and practitioners in data mining, data science, machine learning,
-        predictive analytics and related fields to discuss emerging trends and key issues in utilization of data mining methods for business intelligence.  
-    </p>
-
-    <p>
-        The Annual DM for BI conference, organized by the Department of Software and Information Systems Engineering ​at Ben-Gurion University of the Negev,
-        aims at bringing together researchers and practitioners in data mining, data science, machine learning, predictive analytics and related fields to discuss
-        emerging trends and key issues in utilization of data mining methods for business intelligence.  
-    </p>
-    <p>
-        The fourth annual conference was held on May 19th. You can find more its contents and photos
-        <a href="http://in.bgu.ac.il/en/engn/ise/dmbi2016/Pages/default.aspx" target="_blank">here </a>
-
-    </p>
+<div class="container content-section ">
+  <div ng-bind-html="page.text"></div>
 </div>
