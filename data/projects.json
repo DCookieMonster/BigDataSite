@@ -26,10 +26,10 @@
 {
 	"name" : "Automatic Question Generation from Watson",
 	"people_on_the_project" : "",
-	"supervisors" : "Lior Rokach with M. Last	",
+	"supervisors" : "Lior Rokach with M. Last",
 	"completion_date" : "October 2016"
-}
-,{
+},
+{
 	"name" : "Robust Identity Analytics",
 	"people_on_the_project" : "",
 	"supervisors" : "Lior Rokach with M. Kalech",
