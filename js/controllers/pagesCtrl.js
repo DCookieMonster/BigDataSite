@@ -11,7 +11,8 @@ PagesApp.controller("peopleCtrl", function($scope, $http) {
             $scope.assets = response.data;
             console.log(response.data);
             $scope.people = {
-                graduateStudents: $scope.assets.graduateStudents,
+                PhD: $scope.assets.PhD,
+                MSc: $scope.assets.MSc,
                 undergraduateStudents: $scope.assets.undergraduateStudents,
                 alumni: $scope.assets.alumni
             };

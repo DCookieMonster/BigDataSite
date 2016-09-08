@@ -91,7 +91,7 @@
                 <li>
 
 
-                    <a href="assets/CVs/Bracha_Shapira.docx"
+                    <a href="assets/CVs/Bracha_Shapira.pdf"
                        class="btn btnghost btn-lg" target="_blank"><i
                             class="fa fa-2x fa-file-text"></i> CV</a>
                 </li>
@@ -155,7 +155,7 @@
                 <li>
 
 
-                    <a href="assets/CVs/Lior_Rokach.docx"
+                    <a href="assets/CVs/Lior_Rokach.pdf"
                        class="btn btnghost btn-lg" target="_blank"><i
                             class="fa fa-2x fa-file-text"></i> CV</a>
                 </li>
@@ -218,7 +218,7 @@
                 <li>
 
 
-                    <a href="assets/CVs/Puzis.doc"
+                    <a href="assets/CVs/Puzis.pdf"
                        class="btn btnghost btn-lg" target="_blank"><i
                             class="fa fa-2x fa-file-text"></i> CV</a>
                 </li>
@@ -280,7 +280,7 @@
                 <li>
 
 
-                    <a href="assets/CVs/RobertMoskovitch.docx"
+                    <a href="assets/CVs/RobertMoskovitch.pdf"
                        class="btn btnghost btn-lg" target="_blank"><i
                             class="fa fa-2x fa-file-text"></i> CV</a>
                 </li>
@@ -295,12 +295,63 @@
 <hr>
 <br>
 <br>
-<div ng-if="people.graduateStudents.length" class="row">
-    <h2>Graduate students</h2>
+<div ng-if="people.PhD.length" class="row">
+    <h2 style="text-transform:none;">PhD Students</h2>
     <hr>
 </div>
 <div class="row rpeople"
-     ng-repeat="peoples in people.graduateStudents |  orderBy : ['-rank','status','firstName','lastName']| chunkBy:3">
+     ng-repeat="peoples in people.PhD |  orderBy : ['-rank','status','firstName','lastName']| chunkBy:3">
+
+    <div class="col-md-4 text-center person"
+         ng-repeat="p in peoples | orderBy:'firstName' | orderBy : '-status'">
+        <!--<div class="thumbnail">-->
+        <!--<img class="img-responsive" ng-src="{{p.img}}" alt="{{p.firstName}}" title="{{p.firstName}}">-->
+
+        <div class="caption">
+            <h3>
+                <!--Website Exists-->
+                <a ng-if="p.website" href="{{p.website}}">{{p.firstName + " " + p.lastName}}<br></a>
+                <!--No Website-->
+                <span ng-if="!p.website">{{p.firstName + " " + p.lastName}}<br></span>
+                <small>{{p.rank}}</small>
+            </h3>
+            <!--<p class="about">{{p.about}}</p>-->
+            <p class="about"><strong>Title: </strong>{{p.title}}<br>
+                <strong>Status: </strong>{{p.status}}</p>
+
+            <ul class="list-inline">
+                <!--linkedin-->
+                <li ng-if="p.linkedin"><a href="{{p.linkedin}}" target="_blank"><i
+                        class="fa fa-2x fa-linkedin-square"></i></a></li>
+                <!--scholar-->
+                <li ng-if="p.scholar"><a href="{{p.scholar}}" target="_blank"><i
+                        class="fa fa-2x fa-graduation-cap"></i></a></li>
+                <!--github-->
+                <li ng-if="p.github"><a href="{{p.github}}" target="_blank"><i
+                        class="fa fa-2x fa-github-square"></i></a></li>
+                <!--twitter-->
+                <li ng-if="p.twitter"><a href="{{p.twitter}}" target="_blank"><i
+                        class="fa fa-2x fa-twitter-square"></i></a></li>
+                <!--facebook-->
+                <li ng-if="p.facebook"><a href="{{p.facebook}}" target="_blank"><i
+                        class="fa fa-2x fa-facebook-square"></i></a></li>
+                <!--gmail-->
+                <li ng-if="p.gmail"><a href="mailto:{{p.gmail}}" target="_blank"><i
+                        class="fa fa-2x fa-google-plus-square "></i></a></li>
+
+            </ul>
+        </div>
+        <!--</div>-->
+    </div>
+</div>
+
+<div class="clear"></div>
+<div ng-if="people.MSc.length" class="row">
+    <h2 style="text-transform:none;">MSc Students</h2>
+    <hr>
+</div>
+<div class="row rpeople"
+     ng-repeat="peoples in people.MSc |  orderBy : ['-rank','status','firstName','lastName']| chunkBy:3">
 
     <div class="col-md-4 text-center person"
          ng-repeat="p in peoples | orderBy:'firstName' | orderBy : '-status'">
