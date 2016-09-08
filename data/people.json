@@ -169,9 +169,28 @@
       "img": "",
       "about": "",
       "rank": "MSc Student",
-      "title": "Graph Obfuscation",
+      "title": "Attack graph obfuscation",
       "status": "Proposal in preparation"
     },
+
+    {
+"firstName": "Jorge",
+"lastName": "Augusto Bendahan",
+"img": "",
+"about": "",
+"rank": "MSc Student",
+"title": "Detection of bots and crowdturfers in online social networks",
+"status": "Proposal submitted"
+},
+{
+"firstName": "Tom",
+"lastName": "Gonda",
+"img": "",
+"about": "",
+"rank": "MSc Student",
+"title": "Scalable Attack Path Finding for Increased Security",
+"status": "Proposal submitted"
+},
       {
       "firstName": "Ruben",
       "lastName": "Ohayon",
@@ -204,7 +223,7 @@
       "scholar": "https://scholar.google.co.il/citations?user=JoQW6b8AAAAJ&hl=en",
       "linkedin": "https://www.linkedin.com/in/victor-makarenkov-5776144?authType=NAME_SEARCH&authToken=QUpQ&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A13465387%2CauthType%3ANAME_SEARCH%2Cidx%3A1-3-3%2CtarId%3A1471160583177%2Ctas%3AVictor%20M"
     }
-  
+
   ],
 
   "undergraduateStudents":[
