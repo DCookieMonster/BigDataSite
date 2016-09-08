@@ -64,11 +64,16 @@ PagesApp.controller("searchCtrl",  function($scope, $http) {
         if (input.size == 0 || input == ""){
           return;
         }
-    		angular.forEach($scope.people.graduateStudents,  function(person, index){
+    		angular.forEach($scope.people.PhD,  function(person, index){
                 if ($scope.search_in_people(person,input.toLowerCase())) {
                     $scope.search_people.push(person)
                 }
             });
+            angular.forEach($scope.people.MSc,  function(person, index){
+                    if ($scope.search_in_people(person,input.toLowerCase())) {
+                        $scope.search_people.push(person)
+                    }
+                });
             angular.forEach($scope.projects,  function(project, index){
                     if ($scope.search_in_projects(project,input.toLowerCase())) {
                         $scope.search_projects.push(project)
