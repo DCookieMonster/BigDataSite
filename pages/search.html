@@ -118,30 +118,36 @@
 </div>
     </div>
 <div ng-show="search_projects.length" class="clear"></div>
+<div class="container">
+
 <div ng-show="search_projects.length" class="row">
 <h1>Projects</h1>
 <hr>
 
-<div ng-repeat="project in search_projects |  orderBy : ['-completion_date']">
-    <div class="row col-lg-12">
+<div class="row" ng-repeat="project in search_projects |  orderBy : ['-completion_date']">
+    <div class=" col-lg-12">
         <h3>{{project.name}}</h3>
     </div>
-    <div ng-if="project.people_on_the_project" class="row col-lg-12">
+    <div ng-if="project.people_on_the_project" class=" col-lg-12">
       <p>{{project.people_on_the_project}}<p>
     </div>
-    <div ng-if="project.supervisors" class="row col-lg-12">
+    <div ng-if="project.supervisors" class=" col-lg-12">
       <p>Supervisors: <i>{{project.supervisors}}</i><p>
     </div>
-    <div ng-if="project.completion_date" class="row col-lg-12">
+    <div ng-if="project.completion_date" class=" col-lg-12">
       <p>Completion Date: <i>{{project.completion_date}}</i><p>
     </div>
 </div>
 </div>
+</div>
     <div ng-show="search_people.length" class="clear"></div>
+    <div class="container">
+
     <div ng-show="search_people.length" class="row">
         <h2>students</h2>
         <hr>
     </div>
+
     <div class="row rpeople"
          ng-repeat="peoples in search_people|  orderBy : ['-rank','status','firstName','lastName']| chunkBy:3">
 
@@ -187,6 +193,7 @@
             <!--</div>-->
         </div>
     </div>
+  </div>
 </div>
     <div class="clear"></div>
     <div style="height: 400px"></div>
