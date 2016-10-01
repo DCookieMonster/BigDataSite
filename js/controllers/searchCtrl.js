@@ -18,6 +18,13 @@ PagesApp.controller("searchCtrl",  function($scope, $http) {
                 $scope.projects = response.data;
             });
 
+            $http.get("data/publications.json")
+                .then(function(response) {
+                  console.log(response)
+                    $scope.publications = response.data;
+                });
+
+
     $scope.search_in_people = function(person,value){
     	if (person.firstName.toLowerCase().indexOf(value) > -1 ||
     		person.lastName.toLowerCase().indexOf(value) > -1 ||
@@ -32,6 +39,18 @@ PagesApp.controller("searchCtrl",  function($scope, $http) {
       if (project.name.toLowerCase().indexOf(value) > -1 ||
         project.supervisors.toLowerCase().indexOf(value) > -1 ||
         project.people_on_the_project.toLowerCase().indexOf(value) > -1 )
+      {
+        return true;
+      }
+      return false;
+    };
+
+    $scope.search_in_publications = function(publication,value){
+      if (publication.abstract.toLowerCase().indexOf(value) > -1 ||
+        publication.year == value ||
+          publication.authors.toLowerCase().indexOf(value) > -1 ||
+            publication.publish.toLowerCase().indexOf(value) > -1 ||
+        publication.name.toLowerCase().indexOf(value) > -1 )
       {
         return true;
       }
@@ -61,6 +80,8 @@ PagesApp.controller("searchCtrl",  function($scope, $http) {
         $scope.search_pages = [];
         $scope.search_projects = [];
     		$scope.search_people = [];
+        $scope.search_publications = [];
+
         if (input.size == 0 || input == ""){
           return;
         }
@@ -69,11 +90,17 @@ PagesApp.controller("searchCtrl",  function($scope, $http) {
                     $scope.search_people.push(person)
                 }
             });
+
             angular.forEach($scope.people.MSc,  function(person, index){
                     if ($scope.search_in_people(person,input.toLowerCase())) {
                         $scope.search_people.push(person)
                     }
                 });
+                angular.forEach($scope.publications,  function(publication, index){
+                        if ($scope.search_in_publications(publication,input.toLowerCase())) {
+                            $scope.search_publications.push(publication)
+                        }
+                    });
             angular.forEach($scope.projects,  function(project, index){
                     if ($scope.search_in_projects(project,input.toLowerCase())) {
                         $scope.search_projects.push(project)

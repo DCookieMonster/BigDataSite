@@ -5,7 +5,7 @@
 
 var Mainapp=angular.module('mainApp', [ 'ngAnimate', 'ui.bootstrap','ngSanitize']);
 
-var PagesApp=angular.module('PagesApp', ['ngRoute','angular.filter', 'ngAnimate', 'ui.bootstrap','ngSanitize',
+var PagesApp=angular.module('PagesApp', ['ngRoute','angular.filter', 'ngAnimate','ngSanitize', 'ui.bootstrap',
     'btford.markdown']);
 
 PagesApp.config(['$routeProvider', '$locationProvider',
@@ -47,3 +47,46 @@ PagesApp.config(['$routeProvider', '$locationProvider',
             redirectTo: '/'
         });
     }]);
+
+    PagesApp.directive('modal', function () {
+  return {
+  template: '<div class="modal fade">' +
+  '<div style="width:90%" class="modal-dialog">' +
+    '<div class="modal-content">' +
+      '<div class="modal-header">' +
+        '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' +
+        '<h4 class="modal-title">Abstract</h4>' +
+      '</div>' +
+      '<div class="modal-body" ng-transclude>' +
+  '</div>' +
+    '</div>' +
+  '</div>' +
+  '</div>',
+  restrict: 'E',
+  transclude: true,
+  replace:true,
+  scope:true,
+  link: function postLink(scope, element, attrs) {
+  scope.title = attrs.title;
+
+  scope.$watch(attrs.visible, function(value){
+  if(value == true)
+    $(element).modal('show');
+  else
+    $(element).modal('hide');
+  });
+
+  $(element).on('shown.bs.modal', function(){
+  scope.$apply(function(){
+    scope.$parent[attrs.visible] = true;
+  });
+  });
+
+  $(element).on('hidden.bs.modal', function(){
+  scope.$apply(function(){
+    scope.$parent[attrs.visible] = false;
+  });
+  });
+  }
+  };
+  });

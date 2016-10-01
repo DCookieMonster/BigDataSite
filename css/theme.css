@@ -228,7 +228,7 @@ a:hover,a:focus {
 }
 @media(min-width:767px) {
 	.content-section {
-		padding:150px 0;
+		padding:70px 0;
 			 clear:both;
 	}
 }
@@ -419,7 +419,7 @@ section {
 	-webkit-transition:border linear 0.2s,box-shadow linear 0.2s;
 	-moz-transition:border linear 0.2s,box-shadow linear 0.2s;
 	-o-transition:border linear 0.2s,box-shadow linear 0.2s;
-	transition:border linear 0.2s,box-shadow linear 0.2s;	
+	transition:border linear 0.2s,box-shadow linear 0.2s;
 }
 #contactform input,#contactform textarea {
 	border:0px;
@@ -452,4 +452,81 @@ li.news{
     margin: 0 0 10px;
     font-size: 20px;
     line-height: 1.6;
+}
+
+p {
+		margin-bottom: 15px;
+}
+
+h3 {
+		margin: 15px 0 15px;
+}
+
+p a {
+		/*border-bottom: 1px dashed #ccc;*/
+}
+
+p a:hover {
+		color: #337ab7;
+		/*text-decoration: underline;*/
+		border-bottom: 1px dashed #ccc;
+}
+
+.btnghost {
+		margin-top: 0px;
+}
+
+.clear {
+		margin-top: 60px;
+}
+
+.rpeople {
+		margin-bottom: 50px;
+}
+
+h3 small {
+		text-transform: capitalize;
+}
+ul.teaching>li{
+		font-size: 20px;
+}
+
+
+#custom-search-input {
+		margin:0;
+		margin-top: 10px;
+		padding: 0;
+}
+
+#custom-search-input .search-query {
+		padding-right: 3px;
+		padding-right: 4px \9;
+		padding-left: 3px;
+		padding-left: 4px \9;
+		/* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+		margin-bottom: 0;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+}
+
+#custom-search-input button {
+		border: 0;
+		background: none;
+		/** belows styles are working good */
+		padding: 2px 5px;
+		margin-top: 2px;
+		position: relative;
+		left: -28px;
+		/* IE7-8 doesn't have border-radius, so don't indent the padding */
+		margin-bottom: 0;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		color:#D9230F;
+}
+
+.search-query:focus + button {
+		z-index: 3;
 }

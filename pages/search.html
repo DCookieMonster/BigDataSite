@@ -1,80 +1,4 @@
 <style type="text/css">
-    p {
-        margin-bottom: 15px;
-    }
-
-    h3 {
-        margin: 15px 0 15px;
-    }
-
-    p a {
-        /*border-bottom: 1px dashed #ccc;*/
-    }
-
-    p a:hover {
-        color: #337ab7;
-        /*text-decoration: underline;*/
-        border-bottom: 1px dashed #ccc;
-    }
-
-    .btnghost {
-        margin-top: 0px;
-    }
-
-    .clear {
-        margin-top: 60px;
-    }
-
-    .rpeople {
-        margin-bottom: 50px;
-    }
-
-    h3 small {
-        text-transform: capitalize;
-    }
-    ul.teaching>li{
-        font-size: 20px;
-    }
-
-
-    #custom-search-input {
-        margin:0;
-        margin-top: 10px;
-        padding: 0;
-    }
-
-    #custom-search-input .search-query {
-        padding-right: 3px;
-        padding-right: 4px \9;
-        padding-left: 3px;
-        padding-left: 4px \9;
-        /* IE7-8 doesn't have border-radius, so don't indent the padding */
-
-        margin-bottom: 0;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        border-radius: 3px;
-    }
-
-    #custom-search-input button {
-        border: 0;
-        background: none;
-        /** belows styles are working good */
-        padding: 2px 5px;
-        margin-top: 2px;
-        position: relative;
-        left: -28px;
-        /* IE7-8 doesn't have border-radius, so don't indent the padding */
-        margin-bottom: 0;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        border-radius: 3px;
-        color:#D9230F;
-    }
-
-    .search-query:focus + button {
-        z-index: 3;
-    }
 
 </style>
 <div ng-controller="searchCtrl" class="container content-section ">
@@ -193,6 +117,45 @@
             <!--</div>-->
         </div>
     </div>
+  </div>
+
+  <div ng-show="search_publications.length" class="clear"></div>
+  <div class="container">
+
+  <div ng-show="search_publications.length" class="row">
+  <h1>Publications</h1>
+  <hr>
+
+  <div class="row" ng-repeat="publication in search_publications |  orderBy : ['year']">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <p class="reference">{{publication.authors}}. ({{publication.year}}). <i>{{ publication.name }}</i>,
+                {{publication.publish}}</p>
+        </div>
+        <div class="col-lg-2"></div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+           <span ng-if="publication.abstract!='None' && publication.abstract"
+            <a ng-click="toggleModal(publication.abstract)" ng-class="{'disabled' :publication.abstract=='None' || !publication.abstract }" herf="#"><span>Abstract</span></a>
+          </span>
+          <span ng-if="(publication.abstract!='None' && publication.abstract)&&(publication.file!='None' && publication.file)">
+
+            |
+</span>                         <span ng-if="publication.file!='None'  && publication.file">
+
+            <a target="_blank" ng-href="{{publication.file}}" ng-class="{'disabled' :publication.file=='None' }"><span>Full Paper</span></a>
+</span>
+        </div>
+
+    </div>
+    <div style="padding-top: 30px;"></div>
+
+    <span ng-bind="item.name"></span>
+  </div>
+  </div>
   </div>
 </div>
     <div class="clear"></div>
