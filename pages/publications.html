@@ -4,13 +4,12 @@
     }
 
     h3 {
-        margin: 15px 0 15px;
+        margin: 15px 0;
     }
 
     p a {
         /*border-bottom: 1px dashed #ccc;*/
     }
-
     p a:hover {
         color: #337ab7;
         /*text-decoration: underline;*/
@@ -18,7 +17,7 @@
     }
 
     .btnghost {
-        margin-top: 0px;
+        margin-top: 0;
     }
 
     .clear {
@@ -32,95 +31,99 @@
     h3 small {
         text-transform: capitalize;
     }
-    ul.teaching>li{
+    ul.teaching > li {
         font-size: 20px;
     }
     .clear-l {
-           padding-top: 50px;
-       }
-       a.disabled{
-           color: #626262;
-           cursor: not-allowed;
-       }
-.crossLine{
-   text-decoration: line-through;
-}
+        padding-top: 50px;
+    }
+    a.disabled {
+        color: #626262;
+        cursor: not-allowed;
+    }
+    .crossLine {
+        text-decoration: line-through;
+    }
+    .years_filter{
+      cursor:pointer;
+    }
+
 </style>
-<div  class="container content-section " ng-init="init()">
+<div class="container content-section " ng-init="init()">
 
-   <modal  title="Login form" visible="showModal">
-   <p>{{abstract}}</p>
-     </modal>
+    <modal title="Login form" visible="showModal">
+        <p>{{abstract}}</p>
+    </modal>
 
-               <div class="row">
-                  <div class="col-lg-4">
-                    <h1>Publications</h1>
-                    <hr>
-                  </div>
-<div class="col-lg-4"></div>
-                  <div class="col-lg-4">
+    <div class="row">
+        <div class="col-lg-4">
+            <h1>Publications</h1>
+            <hr>
+        </div>
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
 
-                   <div id="custom-search-input">
+            <div id="custom-search-input">
 
-                       <div class="input-group col-md-12 ">
+                <div class="input-group col-md-12 ">
 
-                           <input ng-model="search.name" type="text" class="  search-query form-control input-lg"
-                                  placeholder="Search publications"/>
-                                   <span class="input-group-btn">
-                                       <button class="btn btn-danger" type="button">
-                                           <span class=" glyphicon glyphicon-search"></span>
-                                       </button>
-                                   </span>
-                       </div>
-                   </div>
-                 </div>
+                    <input ng-model="search.name" type="text" class="  search-query form-control input-lg" placeholder="Search publications"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-danger" type="button">
+                            <span class=" glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
 
-               </div>
-<div class="row">
-<div class="col-lg-12">
-<p>
-<span ng-repeat=" year in years |orderBy: year "><span class="years_filter" id="{{year}}" ng-click="fliter_year(year)">{{year}}</span> | </span>
-<span ng-click="fliter_year('All')">All</span>
-</p>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <p>
+                <span ng-repeat=" year in years |orderBy: year ">
+                    <span class="years_filter" id="{{year}}" ng-click="fliter_year(year)">{{year}}</span>
+                    |
+                </span>
+                <span style="cursor:pointer" ng-click="fliter_year('All')">All</span>
+            </p>
+
+        </div>
+    </div>
+    <div class="clear-l"></div>
+
+    <div ng-repeat="publication in filterList  | start: (currentPage - 1) * pageSize | limitTo: pageSize  track by $index " class="row ">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <p class="reference">{{publication.authors}}. ({{publication.year}}).
+                    <i>{{ publication.name }}</i>,
+                    {{publication.publish}}</p>
+            </div>
+            <div class="col-lg-2"></div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <span <spa ng-if="publication.abstract!='None' && publication.abstract" <a ng-click="toggleModal(publication.abstract)" ng-class="{'disabled' :publication.abstract=='None' || !publication.abstract }" herf="#">Abstract</span>
+            </a>
+        </span>
+        <span ng-if="(publication.abstract!='None' && publication.abstract)&&(publication.file!='None' && publication.file)">
+
+            |
+        </span>
+        <span ng-if="publication.file!='None'  && publication.file">
+
+            <a target="_blank" ng-href="{{publication.file}}" ng-class="{'disabled' :publication.file=='None' }">
+                <span>Full Paper</span>
+            </a>
+        </span>
+    </div>
 
 </div>
+<div style="padding-top: 30px;"></div>
+
+<span ng-bind="item.name"></span>
 </div>
-               <div class="clear-l"></div>
-
-               <div ng-repeat="publication in filterList | orderBy: 'publication.year' | start: (currentPage - 1) * pageSize | limitTo: pageSize  track by $index"
-                    class="row ">
-
-                   <div class="row">
-                       <div class="col-lg-12">
-
-                           <p class="reference">{{publication.authors}}. ({{publication.year}}). <i>{{ publication.name }}</i>,
-                               {{publication.publish}}</p>
-                       </div>
-                       <div class="col-lg-2"></div>
-
-                   </div>
-                   <div class="row">
-                       <div class="col-sm-4">
-                          <span ng-if="publication.abstract!='None' && publication.abstract"
-                           <a ng-click="toggleModal(publication.abstract)" ng-class="{'disabled' :publication.abstract=='None' || !publication.abstract }" herf="#"><span>Abstract</span></a>
-                         </span>
-                         <span ng-if="(publication.abstract!='None' && publication.abstract)&&(publication.file!='None' && publication.file)">
-
-                           |
-</span>                         <span ng-if="publication.file!='None'  && publication.file">
-
-                           <a target="_blank" ng-href="{{publication.file}}" ng-class="{'disabled' :publication.file=='None' }"><span>Full Paper</span></a>
-</span>
-                       </div>
-
-                   </div>
-                   <div style="padding-top: 30px;"></div>
-
-                   <span ng-bind="item.name"></span>
-               </div>
-               <pagination total-items="filterList.length" boundary-links="true" items-per-page="pageSize"
-                           ng-model="currentPage" max-size="5" class="pagination-md"></pagination>
-           </div>
-
-
+<pagination total-items="filterList.length" boundary-links="true" items-per-page="pageSize" ng-model="currentPage" max-size="5" class="pagination-md"></pagination>
 </div>
