@@ -42,7 +42,13 @@
 
     <div ng-repeat="project in projects |  orderBy : ['-completion_date']">
         <div class="row col-lg-12">
-            <h3>{{project.name}}</h3>
+            <span ng-if="project.link">
+              <h3><a href="{{project.link}}" target="_blank"> {{project.name}} </a></h3>
+            </span>
+            <span ng-if="!project.link">
+              <h3>{{project.name}}</h3>
+
+            </span>
         </div>
         <div ng-if="project.people_on_the_project" class="row col-lg-12">
           <p>{{project.people_on_the_project}}<p>
