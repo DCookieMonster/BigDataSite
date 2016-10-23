@@ -1,98 +1,87 @@
-[
-{
-	"name" : "Beehive - Machine Learning Analytics for honeypot data",
-	"people_on_the_project" : "",
-	"supervisors" : "Bracha Shapira and Lior Rokach",
-	"completion_date" : "December 2016"
-},
-{
-	"name" : "Context aware anomaly detection",
-	"people_on_the_project" : "",
-	"supervisors" : "Bracha Shapira and Lior Rokach with Assaf Shabtai, Yuval Elovici, Assaf Schuster (Technion)",
-	"completion_date" : "December 2016"
-},
-{
-	"name" : "XDR - Data Fabrication",
-	"people_on_the_project" : "",
-	"supervisors" : "Bracha Shapira",
-	"completion_date" : "March 2018"
-},
-{
-	"name" : "Obfuscation of attack graphs",
-	"people_on_the_project" : "",
-	"supervisors" : "Bracha Shapira and Rami Puzis",
-	"completion_date" : "September 2018"
-},
-{
-	"name" : "Automatic Question Generation from Watson",
-	"people_on_the_project" : "",
-	"supervisors" : "Lior Rokach with M. Last",
-	"completion_date" : "October 2016"
-},
-{
-	"name" : "Robust Identity Analytics",
-	"people_on_the_project" : "",
-	"supervisors" : "Lior Rokach with M. Kalech",
-	"completion_date" : "October 2016"
-},
-{
-	"name" : "Deep learning for deep understanding of videos and images",
-	"people_on_the_project" : "",
-	"supervisors" : "Lior Rokach with A. Shmilovici",
-	"completion_date" : "October 2016"
-},
-{
-	"name" : "Risk Factoring",
-	"people_on_the_project" : "",
-	"supervisors" : "Lior Rokach and Bracha Shapira",
-	"completion_date" : "October 2016"
-},
-{
-	"name" : "Advanced forensic Analysis of VM snapshots Watson",
-	"people_on_the_project" : "",
-	"supervisors" : "Lior Rokach with Y. Elovici",
-	"completion_date" : "October 2016"
-},
-{
-	"name" : "Security awareness estimation from network traffic data",
-	"people_on_the_project" : "",
-	"supervisors" : "Rami Puzis with Asaf Shabtai, Ron Biton, Andrei Finkelshtein",
-	"completion_date" : "December 2016"
-},
-{
-	"name" : "Algorithms and Applications of Centrality Measures",
-	"people_on_the_project" : "",
-	"supervisors" : "Rami Puzis with V.S. Subrahmanian, Yuval Elovici",
-	"completion_date" : "December 2016"
-},
-{
-	"name" : "Mitigating Signaling DDoS Attacks Launched via Mobile Applications",
-	"people_on_the_project" : "",
-	"supervisors" : "Rami Puzis with Yuval Elovici, V.S.  Subrahmanian,  Edoardo Serra, Noseong Park",
-	"completion_date" : "December 2016"
-},
-{
-	"name" : "Betweenness Centrality in Signed Networks",
-	"people_on_the_project" : "",
-	"supervisors" : "Rami Puzis with Francesca Spezzano, Srijan Kumar, VS Subrahmanian",
-	"completion_date" : "December 2016"
-},
-{
-	"name" : "Complex networks classification",
-	"people_on_the_project" : "",
-	"supervisors" : "Rami Puzis with Sukrit Gupta, Giovanni Felici, Daniele Santoni",
-	"completion_date" : "December 2016"
-},
-{
-	"name" : "Improving community detection with link prediction methods",
-	"people_on_the_project" : "",
-	"supervisors" : "Rami Puzis with Ashwin Bahulkar, Boleslaw Szymanski",
-	"completion_date" : ""
-},
-{
-	"name" : "All optical passive scrambler for untrusted ubiquitous Internet connected devices",
-	"people_on_the_project" : "",
-	"supervisors" : "Rami Puzis with Yossi Oren, Michael Rosenblit",
-	"completion_date" : ""
-}
-]
+[{
+    "name": "Sherlock",
+    "supervisors": " Lior Rokach and Bracha Shapira with Y. Elovici and A. Shabtai",
+    "people_on_the_project": "",
+    "completion_date": "TBA",
+    "link": "http://bigdata.ise.bgu.ac.il/sherlock"
+}, {
+    "name": "Beehive - Machine Learning Analytics for honeypot data",
+    "people_on_the_project": "",
+    "supervisors": "Bracha Shapira and Lior Rokach",
+    "completion_date": "December 2016"
+}, {
+    "name": "Context aware anomaly detection",
+    "people_on_the_project": "",
+    "supervisors": "Bracha Shapira and Lior Rokach with Assaf Shabtai, Yuval Elovici, Assaf Schuster (Technion)",
+    "completion_date": "December 2016"
+}, {
+    "name": "XDR - Data Fabrication",
+    "people_on_the_project": "",
+    "supervisors": "Bracha Shapira",
+    "completion_date": "March 2018"
+}, {
+    "name": "Obfuscation of attack graphs",
+    "people_on_the_project": "",
+    "supervisors": "Bracha Shapira and Rami Puzis",
+    "completion_date": "September 2018"
+}, {
+    "name": "Automatic Question Generation from Watson",
+    "people_on_the_project": "",
+    "supervisors": "Lior Rokach with M. Last",
+    "completion_date": "October 2016"
+}, {
+    "name": "Robust Identity Analytics",
+    "people_on_the_project": "",
+    "supervisors": "Lior Rokach with M. Kalech",
+    "completion_date": "October 2016"
+}, {
+    "name": "Deep learning for deep understanding of videos and images",
+    "people_on_the_project": "",
+    "supervisors": "Lior Rokach with A. Shmilovici",
+    "completion_date": "October 2016"
+}, {
+    "name": "Risk Factoring",
+    "people_on_the_project": "",
+    "supervisors": "Lior Rokach and Bracha Shapira",
+    "completion_date": "October 2016"
+}, {
+    "name": "Advanced forensic Analysis of VM snapshots Watson",
+    "people_on_the_project": "",
+    "supervisors": "Lior Rokach with Y. Elovici",
+    "completion_date": "October 2016"
+}, {
+    "name": "Security awareness estimation from network traffic data",
+    "people_on_the_project": "",
+    "supervisors": "Rami Puzis with Asaf Shabtai, Ron Biton, Andrei Finkelshtein",
+    "completion_date": "December 2016"
+}, {
+    "name": "Algorithms and Applications of Centrality Measures",
+    "people_on_the_project": "",
+    "supervisors": "Rami Puzis with V.S. Subrahmanian, Yuval Elovici",
+    "completion_date": "December 2016"
+}, {
+    "name": "Mitigating Signaling DDoS Attacks Launched via Mobile Applications",
+    "people_on_the_project": "",
+    "supervisors": "Rami Puzis with Yuval Elovici, V.S.  Subrahmanian,  Edoardo Serra, Noseong Park",
+    "completion_date": "December 2016"
+}, {
+    "name": "Betweenness Centrality in Signed Networks",
+    "people_on_the_project": "",
+    "supervisors": "Rami Puzis with Francesca Spezzano, Srijan Kumar, VS Subrahmanian",
+    "completion_date": "December 2016"
+}, {
+    "name": "Complex networks classification",
+    "people_on_the_project": "",
+    "supervisors": "Rami Puzis with Sukrit Gupta, Giovanni Felici, Daniele Santoni",
+    "completion_date": "December 2016"
+}, {
+    "name": "Improving community detection with link prediction methods",
+    "people_on_the_project": "",
+    "supervisors": "Rami Puzis with Ashwin Bahulkar, Boleslaw Szymanski",
+    "completion_date": ""
+}, {
+    "name": "All optical passive scrambler for untrusted ubiquitous Internet connected devices",
+    "people_on_the_project": "",
+    "supervisors": "Rami Puzis with Yossi Oren, Michael Rosenblit",
+    "completion_date": ""
+}]
