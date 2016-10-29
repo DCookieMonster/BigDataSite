@@ -123,7 +123,7 @@ PagesApp.controller("publicationsCtrl", function($scope, $http, filterFilter, $m
         $http.get("data/publications.json")
             .then(function(response) {
                 $scope.list = response.data;
-                $scope.list.sort(function(a,b) {return (a.year > b.year) ? -1 : ((b.year > a.year) ? 1 : 0);} ); 
+                $scope.list.sort(function(a,b) {return (a.year > b.year) ? -1 : ((b.year > a.year) ? 1 : (a.type < b.type) ? -1 : (b.type < a.type) ? 1 : 0);} ); 
 
                 $scope.showModal = false;
                 $scope.toggleModal = function(abstract) {
