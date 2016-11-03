@@ -32,6 +32,42 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 
     <![endif]-->
+    <style>
+    /*#####################
+    Additional Styles (required)
+    ######################*/
+    .carousel-indicators {
+        bottom:-40px;
+    	left:0;
+    	width:100%;
+    	/*background:#ccc;*/
+    	padding: 6px 0px;
+    	margin-left:0;
+    	/*border-top:2px solid #fff;*/
+    }
+    .carousel-indicators li {
+    	width:12px;
+    	height:12px;
+    	background:#ccc;
+    	border-color:#ccc;
+
+    }
+    .carousel-indicators .active {
+    	width:14px;
+    	height:14px;
+    	background:#428bca;
+    	border-color:#428bca;
+    }
+    .carousel-inner .thumbnail {
+    	margin-bottom:0;
+    	border-bottom-left-radius:0;
+    	border-bottom-right-radius:0;
+    }
+    .carousel-inner .caption {
+    	/*background:#ddd;*/
+    	padding: 10px;
+    }
+    </style>
 </head>
 <body ng-app="mainApp" ng-controller="mainCtrl" id="page-top" data-spy="scroll" data-target=".navbar-fixed-top-main">
 <!-- Navigation -->
@@ -106,7 +142,7 @@
 <section id="about">
     <div class="container content-section">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-8">
                 <h2>About us</h2>
 
                 <p ng-bind-html="aboutUs"></p>
@@ -129,7 +165,40 @@
                         <a href="#" class="btnghost"><i class="fa fa-download"></i> Curriculum Vitae</a>
                     </p> -->
             </div>
-            <!--<div class="col-lg-5">-->
+            <div class="col-lg-4">
+              <!-- Carousel
+================================================== -->
+<div id="myCarousel" class="carousel slide">
+    <div class="carousel-inner">
+        <div class="item active">
+          <a href="#"><img class="thumbnail" src="img/news/robert_news.png" alt="Slide1"></a>
+            <div class="caption">
+              <h4>Temporal Biomedical Data Analytic</h4>
+                <p>Robert Moskovitch is a co-editor of Special Issue on Temporal Biomedical Data Analytics in Journal of Biomedical Informatics. </p>
+            </div>
+        </div>
+        <div class="item">
+          <a href="#"><img class="thumbnail" src="img/news/robert_news_3.png" alt="Slide2"></a>
+            <div class="caption">
+              <h4>ACM KDD 2016</h4>
+                <p>Robert Moskovitch was invited to the Program Committee of ACM KDD 2016.</p>
+            </div>
+         </div>
+        <div class="item">
+          <a href="#"><img class="thumbnail" src="img/news/robert_news_2.png" alt="Slide3"></a>
+            <div class="caption">
+              <h4>MEdicine (AIME) 2017</h4>
+                <p>Robert Moskovitch was invited to the Program Committee of Artificial Intelligence in MEdicine (AIME) 2017.</p>
+            </div>
+        </div>
+    </div>
+     <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+</div><!-- End Carousel -->
                 <!--<h2>News</h2>-->
                 <!--<ul class="">-->
                     <!--<li class="news">-->
@@ -153,7 +222,7 @@
                 <!--&lt;!&ndash; <p>-->
                     <!--<a href="#" class="btnghost"><i class="fa fa-download"></i> Curriculum Vitae</a>-->
                 <!--</p> &ndash;&gt;-->
-            <!--</div>-->
+            </div>
 
         </div>
     </div>
@@ -280,5 +349,10 @@
 <script src="js/jquery.easing.min.js"></script>
 <!-- Custom Theme JavaScript -->
 <script src="js/theme.js"></script>
+<script>
+  $('#myCarousel').carousel({
+      	interval:   4000
+  	});
+</script>
 </body>
 </html>
