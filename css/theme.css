@@ -530,3 +530,7 @@ ul.teaching>li{
 .search-query:focus + button {
 		z-index: 3;
 }
+
+.content-section{
+	padding-top: 120px;
+}
