@@ -534,3 +534,7 @@ ul.teaching>li{
 .content-section{
 	padding-top: 120px;
 }
+a {
+    color: #4078c0;
+    text-decoration: none;
+}
