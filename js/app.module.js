@@ -2,6 +2,8 @@
  * Created by dor on 17/07/2016.
  */
 
+var API_KEY = 'e3d1f3defe78ec9cedbb5c50563e89f4fee00d093ec4458dbbbeb64679822598'
+var URL = 'https://cdn.contentful.com/spaces/07lyy2v445rx/entries?access_token='
 
 var Mainapp=angular.module('mainApp', [ 'ngAnimate', 'ui.bootstrap','ngSanitize']);
 
