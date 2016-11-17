@@ -1,8 +1,32 @@
 PagesApp.controller("searchCtrl",  function($scope, $http) {
   window.scrollTo(0, 0);
-     $http.get("data/people.json")
+     $http.get("https://cdn.contentful.com/spaces/07lyy2v445rx/entries?access_token=e3d1f3defe78ec9cedbb5c50563e89f4fee00d093ec4458dbbbeb64679822598&limit=200&content_type=students&order")
      .then(function(response) {
-         $scope.people = response.data;
+       $scope.people = {
+         PhD: [],
+         MSc: [],
+         BSc: [],
+         Other: []
+       };
+       response.data.items.forEach(function(item, index){
+         if (item.fields.rank  == 'PhD Student'){
+             $scope.people.PhD.push(item.fields)
+         }
+         else if  (item.fields.rank  == 'MSc Student'){
+           $scope.people.MSc.push(item.fields)
+
+         }
+         else if (item.fields.rank  == 'BSc Student'){
+           $scope.people.BSc.push(item.fields)
+
+         }
+         else {
+           $scope.people.Other.push(item.fields)
+
+         }
+
+       });
+
 
      });
 
@@ -12,16 +36,21 @@ PagesApp.controller("searchCtrl",  function($scope, $http) {
             $scope.pages = response.data;
         });
 
-        $http.get("data/projects.json")
+        $http.get("https://cdn.contentful.com/spaces/07lyy2v445rx/entries?access_token=e3d1f3defe78ec9cedbb5c50563e89f4fee00d093ec4458dbbbeb64679822598&limit=200&content_type=projects&order")
             .then(function(response) {
               console.log(response)
-                $scope.projects = response.data;
-            });
+              $scope.projects = [];
+                response.data.items.forEach(function(item, index){
+                    $scope.projects.push(item.fields)
+                });            });
 
-            $http.get("data/publications.json")
+            $http.get("https://cdn.contentful.com/spaces/07lyy2v445rx/entries?access_token=e3d1f3defe78ec9cedbb5c50563e89f4fee00d093ec4458dbbbeb64679822598&limit=200&content_type=publications&order")
                 .then(function(response) {
                   console.log(response)
-                    $scope.publications = response.data;
+                    $scope.publications = [];
+                    response.data.items.forEach(function(item, index){
+                       $scope.publications.push(item.fields)
+                    });
                 });
 
 
@@ -46,8 +75,7 @@ PagesApp.controller("searchCtrl",  function($scope, $http) {
     };
 
     $scope.search_in_publications = function(publication,value){
-      if (publication.abstract.toLowerCase().indexOf(value) > -1 ||
-        publication.year == value ||
+      if (     publication.year == value ||
           publication.authors.toLowerCase().indexOf(value) > -1 ||
             publication.publish.toLowerCase().indexOf(value) > -1 ||
         publication.name.toLowerCase().indexOf(value) > -1 )

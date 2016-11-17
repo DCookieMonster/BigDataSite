@@ -4,17 +4,38 @@
 
 PagesApp.controller("peopleCtrl", function($scope, $http) {
     window.scrollTo(0, 0);
-    $http.get("data/people.json")
+    $http.get("https://cdn.contentful.com/spaces/07lyy2v445rx/entries?access_token=e3d1f3defe78ec9cedbb5c50563e89f4fee00d093ec4458dbbbeb64679822598&limit=200&content_type=students&order")
         .then(function(response) {
             console.log(response.data.items);
+            $scope.assets = {
+              PhD: [],
+              MSc: [],
+              BSc: [],
+              Other: []
+            };
+            response.data.items.forEach(function(item, index){
+              if (item.fields.rank  == 'PhD Student'){
+                  $scope.assets.PhD.push(item.fields)
+              }
+              else if  (item.fields.rank  == 'MSc Student'){
+                $scope.assets.MSc.push(item.fields)
 
-            $scope.assets = response.data;
-            console.log(response.data);
+              }
+              else if (item.fields.rank  == 'BSc Student'){
+                $scope.assets.BSc.push(item.fields)
+
+              }
+              else {
+                $scope.assets.Other.push(item.fields)
+
+              }
+
+            });
             $scope.people = {
                 PhD: $scope.assets.PhD,
                 MSc: $scope.assets.MSc,
-                undergraduateStudents: $scope.assets.undergraduateStudents,
-                alumni: $scope.assets.alumni
+                undergraduateStudents: $scope.assets.BSc,
+                alumni: $scope.assets.Other
             };
 
         });
@@ -22,16 +43,9 @@ PagesApp.controller("peopleCtrl", function($scope, $http) {
 
 PagesApp.controller("teachingCtrl", function($scope, $http) {
     window.scrollTo(0, 0);
-    $http.get("data/pages.json")
+    $http.get("https://cdn.contentful.com/spaces/07lyy2v445rx/entries/b9UMbJjtS0mWQ2qI4s0IG?"+API_KEY)
         .then(function(response) {
-            $scope.pages = response.data;
-            console.log($scope.pages)
-            for (index in $scope.pages) {
-                if ($scope.pages[index]._id == "teaching") {
-                    $scope.page = $scope.pages[index];
-                    break;
-                }
-            }
+              $scope.page = response.data.fields;
 
         });
 
@@ -39,16 +53,11 @@ PagesApp.controller("teachingCtrl", function($scope, $http) {
 
 PagesApp.controller("dmbiCtrl", function($scope, $http) {
     window.scrollTo(0, 0);
-    $http.get("data/pages.json")
+    $http.get("https://cdn.contentful.com/spaces/07lyy2v445rx/entries/5vsgCKmIowgOogSq6qegge?"+API_KEY)
         .then(function(response) {
-            $scope.pages = response.data;
-            console.log($scope.pages)
-            for (index in $scope.pages) {
-                if ($scope.pages[index]._id == "dmbi") {
-                    $scope.page = $scope.pages[index];
-                    break;
-                }
-            }
+
+            $scope.page = response.data.fields;
+            console.log(response.data)
 
         });
 
@@ -56,9 +65,12 @@ PagesApp.controller("dmbiCtrl", function($scope, $http) {
 
 PagesApp.controller("projectsCtrl", function($scope, $http) {
     window.scrollTo(0, 0);
-    $http.get("data/projects.json")
+    $http.get("https://cdn.contentful.com/spaces/07lyy2v445rx/entries?access_token=e3d1f3defe78ec9cedbb5c50563e89f4fee00d093ec4458dbbbeb64679822598&limit=200&content_type=projects&order")
         .then(function(response) {
-            $scope.projects = response.data;
+            $scope.projects = [];
+              response.data.items.forEach(function(item, index){
+                  $scope.projects.push(item.fields)
+              });
         });
 });
 
@@ -120,10 +132,13 @@ PagesApp.controller("publicationsCtrl", function($scope, $http, filterFilter, $m
     }
 
     $scope.init = function() {
-        $http.get("data/publications.json")
+        $http.get("https://cdn.contentful.com/spaces/07lyy2v445rx/entries?access_token=e3d1f3defe78ec9cedbb5c50563e89f4fee00d093ec4458dbbbeb64679822598&limit=200&content_type=publications&order")
             .then(function(response) {
-                $scope.list = response.data;
-                $scope.list.sort(function(a,b) {return (a.year > b.year) ? -1 : ((b.year > a.year) ? 1 : (a.type < b.type) ? -1 : (b.type < a.type) ? 1 : 0);} ); 
+              $scope.list = [];
+                response.data.items.forEach(function(item, index){
+                    $scope.list.push(item.fields)
+                });
+                $scope.list.sort(function(a,b) {return (a.year > b.year) ? -1 : ((b.year > a.year) ? 1 : (a.type < b.type) ? -1 : (b.type < a.type) ? 1 : 0);} );
 
                 $scope.showModal = false;
                 $scope.toggleModal = function(abstract) {
