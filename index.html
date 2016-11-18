@@ -33,6 +33,57 @@
 
     <![endif]-->
     <style>
+    .homepage-hero-module {
+    border-right: none;
+    border-left: none;
+    position: relative;
+}
+.no-video .video-container video,
+.touch .video-container video {
+    display: none;
+}
+.video-container .title-container {
+    z-index: 1000;
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    /*text-align: center;*/
+    color: #fff;
+}
+.no-video .video-container .poster,
+.touch .video-container .poster {
+    display: block !important;
+}
+.video-container {
+    position: relative;
+    bottom: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+}
+.video-container .poster img {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+.video-container .filter {
+    z-index: 100;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+.video-container video {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+}
+.video-container video.fillWidth {
+    width: 100%;
+}
+</style>
+    <style>
     /*#####################
     Additional Styles (required)
     ######################*/
@@ -120,7 +171,7 @@
     <!-- /.container -->
 </nav>
 <!-- Intro Header -->
-<header class="intro">
+<!-- <header class="intro">
     <div class="intro-body">
         <div class="container">
             <div class="row">
@@ -140,7 +191,49 @@
             </div>
         </div>
     </div>
-</header>
+</header> -->
+
+
+<div class="homepage-hero-module">
+    <div class="video-container">
+        <div class="filter"></div>
+        <video autoplay loop class="fillWidth">
+            <source src="assets/Love_Coding/MP4/Love-Coding.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <source src="assets/Love_Coding/WEBM/Love-Coding.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        </video>
+        <div class="poster hidden">
+            <img src="assets/Love_Coding/Snapshots/Love-Coding.jpg" alt="">
+        </div>
+        <div class="title-container">
+          <div class="headline">
+            <header class="intro">
+                <div class="intro-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
+                                <h1 class="brand-heading"
+                                    style="stroke: 1px solid;stroke: black;color: #f39c12;-webkit-text-stroke-width: 1px;-webkit-text-stroke-color: #00212f;margin-bottom: 0px;">
+                                    Big Data Center</h1>
+                                <p class="intro-text" style="
+                margin-bottom: 0px;">
+                                    @Ben-Gurion Universty </p>
+                                <br><br><br>
+                                <a style="color:#f39c12;    border: 2px solid #f39c12;" href="#about"
+                                   class="btn btn-circle page-scroll">
+                                    <i style="color:#f39c12;" class="fa fa-angle-double-down animated"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+
 <!-- About Section -->
 <section id="about">
     <div class="container content-section">
@@ -384,5 +477,71 @@
       	interval:   4000
   	});
 </script>
+
+
+<script>
+  //jQuery is required to run this code
+  $( document ).ready(function() {
+
+      scaleVideoContainer();
+
+      initBannerVideoSize('.video-container .poster img');
+      initBannerVideoSize('.video-container .filter');
+      initBannerVideoSize('.video-container video');
+
+      $(window).on('resize', function() {
+          scaleVideoContainer();
+          scaleBannerVideoSize('.video-container .poster img');
+          scaleBannerVideoSize('.video-container .filter');
+          scaleBannerVideoSize('.video-container video');
+      });
+
+  });
+
+  function scaleVideoContainer() {
+
+      var height = $(window).height() + 5;
+      var unitHeight = parseInt(height) + 'px';
+      $('.homepage-hero-module').css('height',unitHeight);
+
+  }
+
+  function initBannerVideoSize(element){
+
+      $(element).each(function(){
+          $(this).data('height', $(this).height());
+          $(this).data('width', $(this).width());
+      });
+
+      scaleBannerVideoSize(element);
+
+  }
+
+  function scaleBannerVideoSize(element){
+
+      var windowWidth = $(window).width(),
+      windowHeight = $(window).height() + 5,
+      videoWidth,
+      videoHeight;
+
+      console.log(windowHeight);
+
+      $(element).each(function(){
+          var videoAspectRatio = $(this).data('height')/$(this).data('width');
+
+          $(this).width(windowWidth);
+
+          if(windowWidth < 1000){
+              videoHeight = windowHeight;
+              videoWidth = videoHeight / videoAspectRatio;
+              $(this).css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
+
+              $(this).width(videoWidth).height(videoHeight);
+          }
+
+          $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
+
+      });
+  }</script>
 </body>
 </html>
