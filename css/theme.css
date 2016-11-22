@@ -538,3 +538,7 @@ a {
     color: #4078c0;
     text-decoration: none;
 }
+.thumbnail{
+	max-width: 600;
+	max-height: 400;
+}

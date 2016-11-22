@@ -17,10 +17,12 @@
           type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <!--<script src="/bower_components/angular-route/angular-route.js"></script>-->
+
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script type="text/javascript" charset="utf-8" src="bower_components/angular-contentful/dist/angular-contentful.min.js"></script>
 
     <script src="js/app.module.js"></script>
     <script src="js/controllers/mainCtrl.js"></script>
@@ -137,9 +139,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
             <ul class="nav navbar-nav">
-                <!-- <li> -->
-                <!-- <a href="index.html">About</a>
-                </li> -->
+
                 <li>
                     <a href="pages.html#/projects">Projects</a>
                 </li>
@@ -149,9 +149,7 @@
                 <li>
                     <a href="pages.html#/publications">Publications</a>
                 </li>
-                <!--<li>-->
-                    <!--<a href="pages.html#/media">Media</a>-->
-                <!--</li>-->
+
                 <li>
                     <a href="pages.html#/teaching">Teaching</a>
                 </li>
@@ -170,29 +168,6 @@
     </div>
     <!-- /.container -->
 </nav>
-<!-- Intro Header -->
-<!-- <header class="intro">
-    <div class="intro-body">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <h1 class="brand-heading"
-                        style="stroke: 1px solid;stroke: black;color: #f39c12;-webkit-text-stroke-width: 1px;-webkit-text-stroke-color: #00212f;margin-bottom: 0px;">
-                        Big Data Center</h1>
-                    <p class="intro-text" style="
-    margin-bottom: 0px;">
-                        @Ben-Gurion Universty </p>
-                    <br><br><br>
-                    <a style="color:#f39c12;    border: 2px solid #f39c12;" href="#about"
-                       class="btn btn-circle page-scroll">
-                        <i style="color:#f39c12;" class="fa fa-angle-double-down animated"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</header> -->
-
 
 <div class="homepage-hero-module">
     <div class="video-container">
@@ -243,108 +218,32 @@
 
                 <p ng-bind-html="aboutUs"></p>
 
-
-                <!--<p>-->
-                <!--The revolution in the measurement and collection of data and the resulting huge amounts of data have made data science a very important field of study and research. Today researchers are mining data available from various sources, such as web query logs, social media posts and blogs, satellites, sensors,  network traffic, and more .-->
-                <!--<br><br>-->
-                <!--Our lab focuses on analyzing large-scale data streams such as news, blogs, sensor data, social media and more to provide personalization, perform predictive analytics, and identify anomalies in the data. -->
-                <!--<br><br>-->
-                <!--Our research covers a range of topics in machine learning and data science.  A current focus is using Deep Learning techniques to build concise representations of the meanings of user's context and use these powerful features to provide accurate personal recommendations .-->
-                <!--<br><br>-->
-                <!---->
-                <!--Another focus is the application of machine learning for cyber security. In various projects we collect network data, honeypot data, or transaction data, to detect anomalies or fraud, predict the malware behavior and perform continuous authentication and more.<br>-->
-                <!--The lab is lead by Prof. Lior Rokach and Prof. Bracha Shapira. Many graduate and Ph.D students are engaged in the lab. Many of them are engaged in the Msc. degree with focus on Data Science at the ISE department.-->
-                <!--<br><br>-->
-                <!--The lab collaborates with many partners (link) in the relevant industry.-->
-                <!--</p>-->
-                <!-- 	<p>
-                        <a href="#" class="btnghost"><i class="fa fa-download"></i> Curriculum Vitae</a>
-                    </p> -->
             </div>
             <div class="col-lg-4">
               <!-- Carousel
 ================================================== -->
 <div id="myCarousel" class="carousel slide">
     <div class="carousel-inner">
-      <div class="item active">
-        <a href="#"><img class="thumbnail" src="img/news/DMBI.png" alt="Slide1"></a>
+
+      <div class="item " ng-class="{'active': $index == 0}" ng-repeat="enrty in entries | orderBy: '-sys.updatedAt' | limitTo: '7' ">
+        <a href="{{enrty.fields.link}}"><img  class="thumbnail" src="http:{{enrty.fields.img.fields.file.url}}" alt="{{enrty.fields.img.fields.title}}"></a>
           <div class="caption">
-            <h4>DMBI</h4>
-              <p>The annual DMBI fifth conference will take place on May 18th at BGU. More details will be posted closer to the event date. </p>
+            <h4>{{enrty.fields.headline}}</h4>
+              <p>{{enrty.fields.text}} </p>
           </div>
       </div>
 
-        <div class="item">
-          <a href="#"><img class="thumbnail" src="img/news/robert_news_3.png" alt="Slide2"></a>
-            <div class="caption">
-              <h4>ACM KDD 2016</h4>
-                <p>Robert Moskovitch was invited to the Program Committee of ACM KDD 2016.</p>
-            </div>
-         </div>
-        <div class="item">
-          <a href="#"><img class="thumbnail" src="img/news/robert_news_2.png" alt="Slide3"></a>
-            <div class="caption">
-              <h4>MEdicine (AIME) 2017</h4>
-                <p>Robert Moskovitch was invited to the Program Committee of Artificial Intelligence in MEdicine (AIME) 2017.</p>
-            </div>
-        </div>
-        <div class="item ">
-          <a href="#"><img class="thumbnail" src="img/news/robert_news.png" alt="Slide4"></a>
-            <div class="caption">
-              <h4>Temporal Biomedical Data Analytic</h4>
-                <p>Robert Moskovitch is a co-editor of Special Issue on Temporal Biomedical Data Analytics in Journal of Biomedical Informatics. </p>
-            </div>
-        </div>
-        <div class="item ">
-          <a href="#"><img class="thumbnail" src="img/news/res.png" alt="Slide5"></a>
-            <div class="caption">
-              <h4>M.Sc research seminar</h4>
-                <p>M.Sc research seminar will take place on Thursday, December 1st. It will feature several research topics of the Big Data lab</p>
-            </div>
-        </div>
-        <div class="item ">
-          <a href="#"><img class="thumbnail" src="img/news/DMBI2.png" alt="Slide6"></a>
-            <div class="caption">
-              <h4>DMBI – Keynote speaker announced!</h4>
-                <p>The keynote speaker for DMBI 2017 will be Joseph A. Konstan from the University of Minnesota
-</p>
-            </div>
-        </div>
     </div>
      <!-- Indicators -->
       <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
-        <li data-target="#myCarousel" data-slide-to="4"></li>
-        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-target="#myCarousel" data-slide-to="{{$index}}" class="" ng-class="{'active': $index == 0}" ng-repeat="enrty in entries"></li>
+
 
       </ol>
 </div><!-- End Carousel -->
-                <!--<h2>News</h2>-->
-                <!--<ul class="">-->
-                    <!--<li class="news">-->
-                        <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar.-->
-                    <!--</li>-->
-                    <!--<li class="news">-->
-                        <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar.-->
-                    <!--</li>-->
-                    <!--<li class="news">-->
-                        <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar.-->
-                    <!--</li>-->
-                    <!--<li class="news">-->
-                        <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar.-->
-                    <!--</li>-->
-                    <!--<li class="news">-->
-                        <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar.-->
-                    <!--</li>-->
 
 
-                <!--</ul>-->
-                <!--&lt;!&ndash; <p>-->
-                    <!--<a href="#" class="btnghost"><i class="fa fa-download"></i> Curriculum Vitae</a>-->
-                <!--</p> &ndash;&gt;-->
+
             </div>
 
         </div>
@@ -373,89 +272,10 @@
 
       </div>
     </div>
-    <!-- <div  class="clear"></div>
-    <div class="gallery">
-        <ul>
-            <li class="col-md-3">
-                <a href="img/promotion/lg_pic_{{imgarr[0]}}.jpg" target="_blank">
-                    <img src="img/promotion/tumbnail/sm_pic_{{imgarr[0]}}.jpg" alt="">
-                </a>
-            </li>
-            <li class="col-md-3">
-              <a href="img/promotion/lg_pic_{{imgarr[1]}}.jpg" target="_blank">
-                  <img src="img/promotion/tumbnail/sm_pic_{{imgarr[1]}}.jpg" alt="">
-              </a>
-            </li>
-            <li class="col-md-3">
-              <a href="img/promotion/lg_pic_{{imgarr[2]}}.jpg" target="_blank">
-                  <img src="img/promotion/tumbnail/sm_pic_{{imgarr[2]}}.jpg" alt="">
-              </a>
-            </li>
-            <li class="col-md-3">
-              <a href="img/promotion/lg_pic_{{imgarr[3]}}.jpg" target="_blank">
-                  <img src="img/promotion/tumbnail/sm_pic_{{imgarr[3]}}.jpg" alt="">
-              </a>
-            </li>
-            <li class="col-md-3">
-              <a href="img/promotion/lg_pic_{{imgarr[4]}}.jpg" target="_blank">
-                  <img src="img/promotion/tumbnail/sm_pic_{{imgarr[4]}}.jpg" alt="">
-              </a>
-            </li>
-            <li class="col-md-3">
-              <a href="img/promotion/lg_pic_{{imgarr[5]}}.jpg" target="_blank">
-                  <img src="img/promotion/tumbnail/sm_pic_{{imgarr[5]}}.jpg" alt="">
-              </a>
-            </li>
-            <li class="col-md-3">
-              <a href="img/promotion/lg_pic_{{imgarr[6]}}.jpg" target="_blank">
-                  <img src="img/promotion/tumbnail/sm_pic_{{imgarr[6]}}.jpg" alt="">
-              </a>
-            </li>
-            <li class="col-md-3">
-              <a href="img/promotion/lg_pic_{{imgarr[7]}}.jpg" target="_blank">
-                  <img src="img/promotion/tumbnail/sm_pic_{{imgarr[7]}}.jpg" alt="">
-              </a>
-            </li>
 
-
-        </ul>
-    </div> -->
     <div  class="clear"></div>
 
 </section>
-<!-- Contact Section -->
-<!--<section id="contact">-->
-    <!--<div class="container content-section text-center">-->
-        <!--<div class="row">-->
-            <!--<div class="col-lg-8 col-lg-offset-2">-->
-                <!--<h2>Author's Message</h2>-->
-                <!--<p>-->
-                    <!--If you like "Aries" template, we'd love to hear from you, whether it be feedback, thanks, new-->
-                    <!--template ideas or even just to say hello, we welcome it all!-->
-                <!--</p>-->
-                <!--<p>-->
-                    <!--<i><a href="mailto:wowthemesnet@gmail.com" style="border-bottom:1px dashed #ccc;">wowthemesnet@gmail.com</a></i>-->
-                <!--</p>-->
-                <!--<ul class="list-inline banner-social-buttons">-->
-                    <!--<li>-->
-                        <!--<a href="https://twitter.com/wowthemesnet" class="btn btnghost btn-lg"><i-->
-                                <!--class="fa fa-twitter fa-fw"></i><span class="network-name">Twitter</span></a>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                        <!--<a href="https://www.facebook.com/pages/wowthemesnet/562560840468823"-->
-                           <!--class="btn btnghost btn-lg"><i class="fa fa-facebook fa-fw"></i><span class="network-name">Facebook</span></a>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                        <!--<a href="https://plus.google.com/u/0/b/110916582192388695332/110916582192388695332/posts"-->
-                           <!--class="btn btnghost btn-lg"><i class="fa fa-google-plus fa-fw"></i><span-->
-                                <!--class="network-name">Google+</span></a>-->
-                    <!--</li>-->
-                <!--</ul>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</section>-->
-<!-- Footer -->
 <footer>
     <div class="container text-center">
         <p class="credits">
@@ -542,6 +362,8 @@
           $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
 
       });
-  }</script>
+  }
+
+</script>
 </body>
 </html>

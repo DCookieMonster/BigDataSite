@@ -5,10 +5,17 @@
 var API_KEY = 'access_token=e3d1f3defe78ec9cedbb5c50563e89f4fee00d093ec4458dbbbeb64679822598'
 var URL = 'https://cdn.contentful.com/spaces/07lyy2v445rx/entries?'
 
-var Mainapp=angular.module('mainApp', [ 'ngAnimate', 'ui.bootstrap','ngSanitize']);
+var Mainapp=angular.module('mainApp', [ 'ngAnimate','contentful', 'ui.bootstrap','ngSanitize']);
 
 var PagesApp=angular.module('PagesApp', ['ngRoute','angular.filter', 'ngAnimate','ngSanitize', 'ui.bootstrap',
     'btford.markdown']);
+
+Mainapp.config(function(contentfulProvider){
+        contentfulProvider.setOptions({
+            space: '07lyy2v445rx',
+            accessToken: 'e3d1f3defe78ec9cedbb5c50563e89f4fee00d093ec4458dbbbeb64679822598'
+        });
+      });
 
 PagesApp.config(['$routeProvider', '$locationProvider',
     function ($routeProvider, $locationProvider) {

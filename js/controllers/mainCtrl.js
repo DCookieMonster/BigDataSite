@@ -3,33 +3,48 @@
  */
 
 
-Mainapp.controller('mainCtrl', ['$scope','$http', function($scope,$http) {
+Mainapp.controller('mainCtrl', ['$scope','$http','contentful', function($scope,$http,contentful) {
     window.scrollTo(0, 0);
-    $scope.shuffle = function(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+$scope.entries=[]
 
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
+    // Get all entries
+   contentful
+     .entries('content_type=news&order')
+     .then(
 
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
+       // Success handler
+       function(response){
+         $scope.entries = response.data.items;
+         console.log($scope.entries);
+       },
 
-      // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
+       // Error handler
+       function(response){
+         console.log('Oops, error ' + response.status);
+       }
+     );
 
-          return array;
-        }
+     contentful
+       .entry('5aBrprBtvGcwmm06yC8GSg')
+       .then(
 
-    $scope.imgarr = $scope.shuffle([1,2,3,4,5,6,7,8,9,10,11])
-    $http.get("data/mainPage.json")
-        .then(function(response) {
-            $scope.aboutUs = response.data.aboutUs;
+         // Success handler
+         function(response){
+           console.log(response.data);
+             $scope.aboutUs = response.data.fields.text;
+         },
 
-        });
+         // Error handler
+         function(response){
+           console.log('Oops, error ' + response.status);
+         }
+       );
+
+    // $http.get("data/mainPage.json")
+    //     .then(function(response) {
+    //         $scope.aboutUs = response.data.text;
+    //
+    //     });
 
 
 
