@@ -63,15 +63,25 @@ PagesApp.controller("dmbiCtrl", function($scope, $http) {
 
 });
 
-PagesApp.controller("projectsCtrl", function($scope, $http) {
+PagesApp.controller("projectsCtrl", function($scope, $http, contentful) {
     window.scrollTo(0, 0);
-    $http.get("https://cdn.contentful.com/spaces/07lyy2v445rx/entries?access_token=e3d1f3defe78ec9cedbb5c50563e89f4fee00d093ec4458dbbbeb64679822598&limit=200&content_type=projects&order")
-        .then(function(response) {
-            $scope.projects = [];
-              response.data.items.forEach(function(item, index){
-                  $scope.projects.push(item.fields)
-              });
-        });
+    $scope.projects=[]
+    contentful
+      .entries('content_type=projects')
+      .then(
+
+        // Success handler
+        function(response){
+          response.data.items.forEach(function(item, index){
+              $scope.projects.push(item.fields)
+          });
+        },
+
+        // Error handler
+        function(response){
+          console.log('Oops, error ' + response.status);
+        }
+      );
 });
 
 PagesApp.controller("publicationsCtrl", function($scope, $http, filterFilter, $modal, $log) {
