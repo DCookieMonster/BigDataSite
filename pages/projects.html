@@ -43,14 +43,7 @@
 
     <div class="project" ng-repeat="project in projects |  orderBy : ['-completion_date']">
         <div style="padding-top:20px" class="row col-lg-12">
-            <span ng-if="project.link">
-                <h3>
-                    <a href="{{project.link}}" target="_blank">
-                        {{project.name}}
-                    </a>
-                </h3>
-            </span>
-            <span ng-if="!project.link">
+            <span>
                 <h3>{{project.name}}</h3>
 
             </span>
@@ -71,9 +64,9 @@
                                         <i>{{project.completion_date}}</i>
                                         <p></div>
                                         <div class="row col-lg-12">
-                                            <a ng-if="project.projectWebsite" href="{{project.projectWebsite}}" class="btn btnghost btn-lg text-center" traget="_blank">Project Website</a>
+                                            <a ng-if="project.projectWebsite" href="http://{{project.projectWebsite}}" class="btn btnghost btn-lg text-center" target="_blank">Project Website</a>
 
-                                            <a ng-if="project.personalWebsite" href="{{project.personalWebsite}}" class="btn btnghost btn-lg  text-center" traget="_blank">Personal Website</a>
+                                            <a ng-if="project.personalWebsite" href="http://{{project.personalWebsite}}" class="btn btnghost btn-lg  text-center" target="_blank">Personal Website</a>
                                             <a ng-if="project.presentation" href="http:{{project.presentation.fields.file.url}}" alt="{{project.presentation.title}}" class="btn btnghost btn-lg" target="_blank">
                                                 <i class="fa fa-download"></i>
                                                 Presentation</a>
