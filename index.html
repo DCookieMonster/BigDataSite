@@ -240,7 +240,7 @@
     </div>
      <!-- Indicators -->
       <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="{{$index}}" class="" ng-class="{'active': $index == 0}" ng-repeat="enrty in entries"></li>
+        <li data-target="#myCarousel" data-slide-to="{{$index}}" class="" ng-class="{'active': $index == 0}" ng-repeat="enrty in entries  | limitTo: '7'"></li>
 
 
       </ol>
