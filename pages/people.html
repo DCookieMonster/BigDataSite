@@ -559,14 +559,14 @@
 
     <div class="col-md-4 text-center person" ng-repeat="p in peoples | orderBy:'firstName' | orderBy : '-status'">
         <!--<div class="thumbnail">-->
-        <!--<img class="img-responsive" ng-src="{{p.img}}" alt="{{p.firstName}}" title="{{p.firstName}}">-->
+        <img class="img-responsive" ng-src="img/profile/{{p.firstName + "_" + p.lastName}}" >
 
         <div class="caption">
             <h3>
                 <!--Website Exists-->
                 <a ng-if="p.website" href="{{p.website}}">{{p.firstName + " " + p.lastName}}<br></a>
                 <!--No Website-->
-                <!--<img class="img-responsive" ng-src="{{p.img}}" alt="{{p.firstName}}" title="{{p.firstName}}">-->
+                <!--<img class="img-responsive" ng-src="img/profile/"{{p.firstName+'_'}}" alt="{{p.firstName}}" title="{{p.firstName}}">-->
                 <span ng-if="!p.website">{{p.firstName + " " + p.lastName}}<br></span>
                 <small>{{p.rank}}</small>
             </h3>
